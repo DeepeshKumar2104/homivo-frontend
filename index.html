@@ -18,49 +18,7 @@ Improve the design of this section also useproper unsplash image because previou
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 <script>AOS.init();</script>
 
-    <style>
-      body { font-family: 'Inter', sans-serif; }
-      .logo-text {
-        font-family: 'Inter', sans-serif;
-        font-weight: 800;
-        letter-spacing: 2px;
-        font-size: 2rem;
-        color: #2563eb;
-      }
-      .logo-dot {
-        color: #0ea5e9;
-      }
-      .section-title {
-        font-size: 2.25rem;
-        font-weight: 700;
-        color: #1e293b;
-        letter-spacing: -1px;
-      }
-      .nav-link {
-        position: relative;
-        transition: color 0.2s;
-      }
-      .nav-link:after {
-        content: '';
-        display: block;
-        width: 0;
-        height: 2px;
-        background: #2563eb;
-        transition: width .3s;
-        position: absolute;
-        left: 0;
-        bottom: -4px;
-      }
-      .nav-link:hover {
-        color: #2563eb;
-      }
-      .nav-link:hover:after {
-        width: 100%;
-      }
-      html {
-        scroll-behavior: smooth;
-      }
-    </style>
+    
   </head>
   <body class="bg-gray-50">
     <!-- Header / Navigation -->
@@ -121,50 +79,54 @@ Improve the design of this section also useproper unsplash image because previou
 <script>AOS.init();</script>
 
 <!-- HERO SECTION -->
-<section id="hero" class="relative bg-gradient-to-br from-blue-50 via-white to-blue-100 pt-32 pb-20 px-6 md:px-16 overflow-hidden font-inter">
-  <!-- Decorative SVG Blobs -->
-  <svg class="absolute top-0 left-0 w-72 h-72 opacity-20 text-blue-200 pointer-events-none" fill="currentColor" viewBox="0 0 400 400">
-    <circle cx="200" cy="200" r="200"/>
-  </svg>
-  <svg class="absolute bottom-0 right-0 w-80 h-80 opacity-10 text-indigo-200 pointer-events-none" fill="currentColor" viewBox="0 0 400 400">
-    <rect width="400" height="400" rx="200"/>
-  </svg>
+<section id="hero" class="relative bg-white pt-32 pb-20 px-6 md:px-16 font-inter overflow-hidden">
   <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
     <!-- LEFT TEXT SECTION -->
     <div data-aos="fade-right">
-      <span class="inline-block bg-blue-100 text-blue-700 font-semibold rounded-full px-4 py-1 mb-6 text-base shadow">🏠 India's Next-Gen Housing Platform</span>
-      <h1 class="text-4xl md:text-6xl font-extrabold text-blue-700 leading-tight mb-4">
-        Find Your <span class="text-indigo-600">Next Home</span>
-        <br class="hidden md:block" />
+      <span class="inline-block bg-blue-100 text-blue-700 font-semibold rounded-full px-4 py-1 mb-6 text-base shadow-sm">
+        🏠 India's Next-Gen Housing Platform
+      </span>
+      <h1 class="text-4xl md:text-6xl font-extrabold text-slate-800 leading-tight mb-4">
+        Find Your <span class="text-indigo-600">Next Home</span><br class="hidden md:block" />
         <span class="text-blue-600">Effortlessly</span>
       </h1>
-      <p class="mt-4 text-lg text-gray-600 leading-relaxed max-w-xl">
-        Discover, book, and manage accommodations with ease.<br>
+      <p class="mt-4 text-lg text-slate-600 leading-relaxed max-w-xl">
+        Discover, book, and manage accommodations with ease.<br />
         <span class="text-blue-600 font-semibold">Simple. Secure. Smart.</span>
       </p>
+
       <!-- Feature Badges -->
       <div class="flex flex-wrap gap-3 mt-6">
-        <span class="flex items-center gap-2 bg-white/80 border border-blue-100 text-blue-700 font-medium px-4 py-2 rounded-full shadow-sm text-sm">
-          <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+        <span class="flex items-center gap-2 bg-slate-50 border border-slate-200 text-blue-700 font-medium px-4 py-2 rounded-full shadow text-sm">
+          <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
           Verified Listings
         </span>
-        <span class="flex items-center gap-2 bg-white/80 border border-blue-100 text-blue-700 font-medium px-4 py-2 rounded-full shadow-sm text-sm">
-          <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 12l2 2 4-4"/></svg>
+        <span class="flex items-center gap-2 bg-slate-50 border border-slate-200 text-blue-700 font-medium px-4 py-2 rounded-full shadow text-sm">
+          <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8 12l2 2 4-4"/>
+          </svg>
           Secure Payments
         </span>
-        <span class="flex items-center gap-2 bg-white/80 border border-blue-100 text-blue-700 font-medium px-4 py-2 rounded-full shadow-sm text-sm">
-          <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3"/></svg>
+        <span class="flex items-center gap-2 bg-slate-50 border border-slate-200 text-blue-700 font-medium px-4 py-2 rounded-full shadow text-sm">
+          <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3"/>
+          </svg>
           24/7 Support
         </span>
       </div>
+
       <!-- CTA BUTTON -->
       <div class="mt-10 flex flex-col sm:flex-row sm:items-center gap-4">
-        <a href="#waitlist" class="inline-block bg-gradient-to-r from-blue-600 to-indigo-500 hover:from-indigo-600 hover:to-blue-700 text-white text-lg font-semibold px-8 py-4 rounded-2xl shadow-xl transition duration-200">
+        <a href="#waitlist" class="inline-block bg-gradient-to-r from-indigo-600 to-blue-500 hover:from-indigo-700 hover:to-blue-600 text-white text-lg font-semibold px-8 py-4 rounded-2xl shadow-xl transition duration-200">
           🚀 Join the Waitlist
         </a>
         <p class="text-sm text-gray-500">No spam. Just real housing updates.</p>
       </div>
-      <!-- Contact email directly in Hero -->
+
+      <!-- Contact -->
       <div class="mt-6">
         <p class="text-sm text-gray-600">
           Questions? Reach us at
@@ -172,7 +134,8 @@ Improve the design of this section also useproper unsplash image because previou
         </p>
       </div>
     </div>
-    <!-- RIGHT IMAGE: Beautiful Unsplash Home/Apartment -->
+
+    <!-- RIGHT IMAGE -->
     <div class="flex justify-center items-center relative" data-aos="fade-left">
       <div class="relative">
         <img
@@ -181,14 +144,15 @@ Improve the design of this section also useproper unsplash image because previou
           class="w-full max-w-md rounded-3xl shadow-2xl border-4 border-white object-cover"
           style="min-height:340px;"
         />
-        <!-- Subtle animated SVG shape -->
-        <svg class="absolute top-8 right-8 w-12 h-12 opacity-20 animate-bounce pointer-events-none" fill="currentColor" viewBox="0 0 100 100">
+        <!-- Optional: Add a soft animated shape for flair -->
+        <svg class="absolute top-8 right-8 w-10 h-10 opacity-10 animate-ping pointer-events-none" fill="currentColor" viewBox="0 0 100 100">
           <circle cx="50" cy="50" r="50"/>
         </svg>
       </div>
     </div>
   </div>
 </section>
+
 
 
    <!-- Vision Section -->
@@ -487,6 +451,126 @@ Improve the design of this section also useproper unsplash image because previou
   </div>
 </section>
 
+
+<!-- Property Types Section -->
+    <section id="property-types" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="section-title">Diverse Property Types</h2>
+                <p class="section-subtitle">From PGs to premium apartments, find the perfect match for your needs</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <div class="property-type-card">
+                    <div class="relative h-48 rounded-t-lg overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1560448204-61dc36dc98c8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Flat/Apartment" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent opacity-70"></div>
+                        <div class="absolute bottom-0 left-0 p-4">
+                            <span class="px-2 py-1 bg-primary text-white text-xs rounded-full">residential</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Flat/Apartment</h3>
+                        <p class="text-sm text-gray-600">Independent flats for rent (1BHK, 2BHK, Studio)</p>
+                    </div>
+                </div>
+                <div class="property-type-card">
+                    <div class="relative h-48 rounded-t-lg overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Paying Guest" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent opacity-70"></div>
+                        <div class="absolute bottom-0 left-0 p-4">
+                            <span class="px-2 py-1 bg-secondary text-white text-xs rounded-full">shared/residential</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Paying Guest (PG)</h3>
+                        <p class="text-sm text-gray-600">Shared accommodation with food & services</p>
+                    </div>
+                </div>
+                <div class="property-type-card">
+                    <div class="relative h-48 rounded-t-lg overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Hostel" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent opacity-70"></div>
+                        <div class="absolute bottom-0 left-0 p-4">
+                            <span class="px-2 py-1 bg-accent text-white text-xs rounded-full">student</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Hostel</h3>
+                        <p class="text-sm text-gray-600">For students/interns, mess facility, shared bath</p>
+                    </div>
+                </div>
+                <div class="property-type-card">
+                    <div class="relative h-48 rounded-t-lg overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Co-living Space" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent opacity-70"></div>
+                        <div class="absolute bottom-0 left-0 p-4">
+                            <span class="px-2 py-1 bg-primary text-white text-xs rounded-full">shared</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Co-living Space</h3>
+                        <p class="text-sm text-gray-600">Managed shared living with amenities</p>
+                    </div>
+                </div>
+                <div class="property-type-card">
+                    <div class="relative h-48 rounded-t-lg overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Family Home" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent opacity-70"></div>
+                        <div class="absolute bottom-0 left-0 p-4">
+                            <span class="px-2 py-1 bg-secondary text-white text-xs rounded-full">residential</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Family Room/Flat</h3>
+                        <p class="text-sm text-gray-600">Large unit for full families</p>
+                    </div>
+                </div>
+                <div class="property-type-card">
+                    <div class="relative h-48 rounded-t-lg overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Studio Apartment" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent opacity-70"></div>
+                        <div class="absolute bottom-0 left-0 p-4">
+                            <span class="px-2 py-1 bg-accent text-white text-xs rounded-full">residential</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Studio Apartment</h3>
+                        <p class="text-sm text-gray-600">One-room self-contained apartment</p>
+                    </div>
+                </div>
+                <div class="property-type-card">
+                    <div class="relative h-48 rounded-t-lg overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1629079447777-1e605162dc8d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Service Apartment" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent opacity-70"></div>
+                        <div class="absolute bottom-0 left-0 p-4">
+                            <span class="px-2 py-1 bg-primary text-white text-xs rounded-full">corporate</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Service Apartment</h3>
+                        <p class="text-sm text-gray-600">Fully managed flats with services</p>
+                    </div>
+                </div>
+                <div class="property-type-card">
+                    <div class="relative h-48 rounded-t-lg overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Office Space" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent opacity-70"></div>
+                        <div class="absolute bottom-0 left-0 p-4">
+                            <span class="px-2 py-1 bg-secondary text-white text-xs rounded-full">commercial</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Office/Co-working Space</h3>
+                        <p class="text-sm text-gray-600">Office desk or room rental options</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="#" class="btn-secondary">View All Property Types</a>
+            </div>
+        </div>
+    </section>
+
     <!-- Analytics Section -->
 <section id="analytics" class="scroll-mt-24 bg-gradient-to-br from-blue-50 via-white to-blue-100 py-20 md:py-28 relative overflow-hidden font-inter">
   <!-- Decorative SVGs -->
@@ -719,6 +803,121 @@ Improve the design of this section also useproper unsplash image because previou
     </div>
   </div>
 </section>
+<!-- Pricing Section -->
+<!-- Pricing Section -->
+<section id="pricing" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="section-title text-gray-800">Pricing Plans</h2>
+            <p class="section-subtitle text-gray-600">Flexible options for tenants and property owners</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Basic Plan -->
+            <div class="pricing-card bg-white shadow-lg rounded-lg border border-gray-200 hover:shadow-xl transition-all">
+                <div class="p-8 text-center">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Basic</h3>
+                    <div class="mb-6">
+                        <span class="text-5xl font-bold text-gray-800">Free</span>
+                    </div>
+                    <p class="text-gray-600 mb-8">Perfect for tenants looking for their next home</p>
+                    <ul class="space-y-3 mb-8 text-left text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Basic property search</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Save favorite listings</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>In-app messaging</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Digital rental agreements</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="btn-primary w-full text-white bg-indigo-600 hover:bg-indigo-700 px-6 py-3 rounded-xl">Get Started</a>
+                </div>
+            </div>
+
+            <!-- Premium Plan -->
+            <div class="pricing-card pricing-card-featured bg-white shadow-xl rounded-lg border border-gray-200 hover:shadow-2xl relative">
+                <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-indigo-600 text-white text-sm py-1 px-4 rounded-full">
+                    Most Popular
+                </div>
+                <div class="p-8 text-center">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Premium</h3>
+                    <div class="mb-6">
+                        <span class="text-5xl font-bold text-indigo-600">₹999</span>
+                        <span class="text-gray-600">/month</span>
+                    </div>
+                    <p class="text-gray-600 mb-8">For property owners with multiple listings</p>
+                    <ul class="space-y-3 mb-8 text-left text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Up to 5 property listings</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Featured listings</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Analytics dashboard</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Priority customer support</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Tenant verification services</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="btn-primary w-full text-white bg-indigo-600 hover:bg-indigo-700 px-6 py-3 rounded-xl">Try Premium</a>
+                </div>
+            </div>
+
+            <!-- Enterprise Plan -->
+            <div class="pricing-card bg-white shadow-lg rounded-lg border border-gray-200 hover:shadow-xl transition-all">
+                <div class="p-8 text-center">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Enterprise</h3>
+                    <div class="mb-6">
+                        <span class="text-5xl font-bold text-gray-800">Custom</span>
+                    </div>
+                    <p class="text-gray-600 mb-8">For businesses managing employee housing</p>
+                    <ul class="space-y-3 mb-8 text-left text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Custom API integration</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Unlimited employee accounts</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Bulk booking discounts</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Dedicated account manager</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Custom reporting</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="btn-secondary w-full text-white bg-gray-600 hover:bg-gray-700 px-6 py-3 rounded-xl">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 
     <!-- Testimonials Section -->
 <section id="testimonials" class="scroll-mt-24 bg-gradient-to-br from-blue-50 via-white to-blue-100 py-24 md:py-32 relative overflow-hidden font-inter">
