@@ -188,64 +188,82 @@ Improve the design of this section also useproper unsplash image because previou
 
 
    <!-- Vision Section -->
-<section id="vision" class="scroll-mt-24 bg-gradient-to-br from-blue-50 via-white to-blue-100 py-24 relative overflow-hidden">
-  <!-- Decorative SVG Shape Top Right -->
-  <svg class="absolute top-0 right-0 w-64 h-64 opacity-20 text-blue-200 pointer-events-none" fill="currentColor" viewBox="0 0 400 400">
+<section id="vision" class="scroll-mt-24 bg-gradient-to-br from-blue-50 via-white to-indigo-100 py-24 md:py-28 relative overflow-hidden font-inter">
+  <!-- Decorative SVGs -->
+  <svg class="absolute top-0 left-0 w-64 h-64 opacity-10 text-blue-200 pointer-events-none" fill="currentColor" viewBox="0 0 400 400">
     <circle cx="200" cy="200" r="200"/>
   </svg>
-  <div class="container mx-auto px-6 text-center relative z-10">
-    <h2 class="section-title mb-4 text-blue-700" data-aos="fade-down">Our Vision</h2>
+  <svg class="absolute bottom-0 right-0 w-64 h-64 opacity-10 text-indigo-300 pointer-events-none" fill="currentColor" viewBox="0 0 400 400">
+    <rect width="400" height="400" rx="200"/>
+  </svg>
+
+  <div class="container mx-auto px-6 md:px-12 relative z-10">
+    <!-- Section Heading Centered -->
+    <div class="mb-16 text-center" data-aos="fade-down">
+      <h2 class="section-title mb-4 text-blue-700" data-aos="fade-down">Our Vision</h2>
     <p class="mx-auto mb-10 max-w-2xl text-lg text-gray-600" data-aos="fade-up" data-aos-delay="100">
       Bridging the gap between traditional accommodation and modern, on-demand technology.<br>
       <span class="font-semibold text-blue-700">Homivo empowers tenants, owners, and enterprises</span> with a secure, scalable, and seamless housing experience.
     </p>
-    <div class="flex flex-col md:flex-row items-center justify-center gap-10">
-      <div class="md:w-1/2" data-aos="fade-right" data-aos-delay="200">
+    </div>
+
+    <!-- Image + Cards Layout -->
+    <div class="flex flex-col md:flex-row items-center gap-10">
+      <!-- Left: Image -->
+      <div class="w-full md:w-1/2" data-aos="fade-right">
         <img 
-          src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=900&q=80"
-          alt="Modern Vision"
-          class="mx-auto max-w-xl rounded-3xl shadow-2xl border-4 border-white"
-          style="object-fit: cover; min-height: 320px;"
+          src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80"
+          alt="Our Vision"
+          class="rounded-3xl shadow-2xl border-4 border-white w-full max-w-md mx-auto object-cover"
+          style="min-height: 300px;"
         />
       </div>
-      <div class="md:w-1/2 flex flex-col items-center md:items-start mt-10 md:mt-0" data-aos="fade-left" data-aos-delay="300">
-        <div class="bg-white bg-opacity-80 rounded-2xl shadow-lg p-8 max-w-md mx-auto border border-blue-100">
-          <h3 class="text-2xl font-bold text-blue-700 mb-4">Why Homivo?</h3>
-          <ul class="space-y-4 text-left">
-            <li class="flex items-center gap-3">
-              <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-600">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-              </span>
-              <span>Modern, tech-driven housing experience</span>
-            </li>
-            <li class="flex items-center gap-3">
-              <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-600">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 12l2 2 4-4"/></svg>
-              </span>
-              <span>Trust, transparency, and security for all</span>
-            </li>
-            <li class="flex items-center gap-3">
-              <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-600">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3"/></svg>
-              </span>
-              <span>Empowering tenants & owners with data</span>
-            </li>
-            <li class="flex items-center gap-3">
-              <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-600">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="5" rx="2"/><path stroke-linecap="round" stroke-linejoin="round" d="M2 10h20"/></svg>
-              </span>
-              <span>Seamless, scalable, and future-ready</span>
-            </li>
-          </ul>
+
+      <!-- Right: Cards -->
+      <div class="w-full md:w-1/2 space-y-6" data-aos="fade-left">
+        <!-- Card 1 -->
+        <div class="bg-white p-5 rounded-2xl shadow-lg border border-blue-100 flex items-start gap-4" data-aos="fade-up" data-aos-delay="100">
+          <span class="flex items-center justify-center w-10 h-10 rounded-full bg-blue-100 text-blue-600 shadow">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+            </svg>
+          </span>
+          <p class="text-gray-700 text-base">Modern, tech-driven housing experience</p>
+        </div>
+        <!-- Card 2 -->
+        <div class="bg-white p-5 rounded-2xl shadow-lg border border-blue-100 flex items-start gap-4" data-aos="fade-up" data-aos-delay="200">
+          <span class="flex items-center justify-center w-10 h-10 rounded-full bg-blue-100 text-blue-600 shadow">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 12l2 2 4-4"/>
+            </svg>
+          </span>
+          <p class="text-gray-700 text-base">Trust, transparency, and security for all</p>
+        </div>
+        <!-- Card 3 -->
+        <div class="bg-white p-5 rounded-2xl shadow-lg border border-blue-100 flex items-start gap-4" data-aos="fade-up" data-aos-delay="300">
+          <span class="flex items-center justify-center w-10 h-10 rounded-full bg-blue-100 text-blue-600 shadow">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3"/>
+            </svg>
+          </span>
+          <p class="text-gray-700 text-base">Empowering tenants & owners with data</p>
+        </div>
+        <!-- Card 4 -->
+        <div class="bg-white p-5 rounded-2xl shadow-lg border border-blue-100 flex items-start gap-4" data-aos="fade-up" data-aos-delay="400">
+          <span class="flex items-center justify-center w-10 h-10 rounded-full bg-blue-100 text-blue-600 shadow">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <rect width="20" height="14" x="2" y="5" rx="2"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2 10h20"/>
+            </svg>
+          </span>
+          <p class="text-gray-700 text-base">Seamless, scalable, and future-ready</p>
         </div>
       </div>
     </div>
   </div>
-  <!-- Decorative SVG Shape Bottom Left -->
-  <svg class="absolute bottom-0 left-0 w-64 h-64 opacity-10 text-blue-300 pointer-events-none" fill="currentColor" viewBox="0 0 400 400">
-    <rect width="400" height="400" rx="200"/>
-  </svg>
 </section>
+
 
     <!-- Features Section -->
    <section id="features" class="scroll-mt-24 bg-gradient-to-br from-blue-50 via-white to-blue-100 py-16 md:py-24 relative overflow-hidden">
@@ -421,7 +439,126 @@ Improve the design of this section also useproper unsplash image because previou
     </div>
   </div>
 </section>
-
+<!-- our properties -->
+ <section id="property-types" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-down">
+      <h2 class="text-4xl font-extrabold mb-4 text-gray-900 dark:text-white">Diverse Properties</h2>
+      <p class="text-base text-gray-500 font-light dark:text-gray-400">
+        Choose the plan that fits your business. Whether you're a solo developer or a large enterprise, we've got you covered.
+      </p>
+    </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <div class="property-type-card">
+                    <div class="relative h-48 rounded-t-lg overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1560448204-61dc36dc98c8?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=80" alt="Flat/Apartment" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent opacity-70"></div>
+                        <div class="absolute bottom-0 left-0 p-4">
+                            <span class="px-2 py-1 bg-primary text-white text-xs rounded-full">residential</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Flat/Apartment</h3>
+                        <p class="text-sm text-gray-600">Independent flats for rent (1BHK, 2BHK, Studio)</p>
+                    </div>
+                </div>
+                <div class="property-type-card">
+                    <div class="relative h-48 rounded-t-lg overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=80" alt="Paying Guest" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent opacity-70"></div>
+                        <div class="absolute bottom-0 left-0 p-4">
+                            <span class="px-2 py-1 bg-secondary text-white text-xs rounded-full">shared/residential</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Paying Guest (PG)</h3>
+                        <p class="text-sm text-gray-600">Shared accommodation with food &amp; services</p>
+                    </div>
+                </div>
+                <div class="property-type-card">
+                    <div class="relative h-48 rounded-t-lg overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=80" alt="Hostel" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent opacity-70"></div>
+                        <div class="absolute bottom-0 left-0 p-4">
+                            <span class="px-2 py-1 bg-accent text-white text-xs rounded-full">student</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Hostel</h3>
+                        <p class="text-sm text-gray-600">For students/interns, mess facility, shared bath</p>
+                    </div>
+                </div>
+                <div class="property-type-card">
+                    <div class="relative h-48 rounded-t-lg overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=80" alt="Co-living Space" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent opacity-70"></div>
+                        <div class="absolute bottom-0 left-0 p-4">
+                            <span class="px-2 py-1 bg-primary text-white text-xs rounded-full">shared</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Co-living Space</h3>
+                        <p class="text-sm text-gray-600">Managed shared living with amenities</p>
+                    </div>
+                </div>
+                <div class="property-type-card">
+                    <div class="relative h-48 rounded-t-lg overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=80" alt="Family Home" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent opacity-70"></div>
+                        <div class="absolute bottom-0 left-0 p-4">
+                            <span class="px-2 py-1 bg-secondary text-white text-xs rounded-full">residential</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Family Room/Flat</h3>
+                        <p class="text-sm text-gray-600">Large unit for full families</p>
+                    </div>
+                </div>
+                <div class="property-type-card">
+                    <div class="relative h-48 rounded-t-lg overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=80" alt="Studio Apartment" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent opacity-70"></div>
+                        <div class="absolute bottom-0 left-0 p-4">
+                            <span class="px-2 py-1 bg-accent text-white text-xs rounded-full">residential</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Studio Apartment</h3>
+                        <p class="text-sm text-gray-600">One-room self-contained apartment</p>
+                    </div>
+                </div>
+                <div class="property-type-card">
+                    <div class="relative h-48 rounded-t-lg overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1629079447777-1e605162dc8d?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=80" alt="Service Apartment" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent opacity-70"></div>
+                        <div class="absolute bottom-0 left-0 p-4">
+                            <span class="px-2 py-1 bg-primary text-white text-xs rounded-full">corporate</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Service Apartment</h3>
+                        <p class="text-sm text-gray-600">Fully managed flats with services</p>
+                    </div>
+                </div>
+                <div class="property-type-card">
+                    <div class="relative h-48 rounded-t-lg overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=80" alt="Office Space" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent opacity-70"></div>
+                        <div class="absolute bottom-0 left-0 p-4">
+                            <span class="px-2 py-1 bg-secondary text-white text-xs rounded-full">commercial</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Office/Co-working Space</h3>
+                        <p class="text-sm text-gray-600">Office desk or room rental options</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="#" class="btn-secondary">View All Property Types</a>
+            </div>
+        </div>
+    </section>
     <!-- How It Works Section -->
 <section id="how" class="scroll-mt-24 bg-gradient-to-br from-blue-50 via-white to-blue-100 py-20 md:py-28 relative overflow-hidden font-inter">
   <!-- Decorative SVGs -->
@@ -711,6 +848,67 @@ Improve the design of this section also useproper unsplash image because previou
             <circle cx="50" cy="50" r="50"/>
           </svg>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- our pricing  -->
+<section class="scroll-mt-24 py-20 px-6 bg-white dark:bg-gray-900">
+  <div class="container mx-auto">
+    <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-down">
+      <h2 class="text-4xl font-extrabold mb-4 text-gray-900 dark:text-white">Our Pricing Plan</h2>
+      <p class="text-base text-gray-500 font-light dark:text-gray-400">
+        Choose the plan that fits your business. Whether you're a solo developer or a large enterprise, we've got you covered.
+      </p>
+    </div>
+
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <!-- Starter -->
+      <div class="bg-white dark:bg-gray-800 border dark:border-gray-700 rounded-xl shadow p-8 text-center" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="text-2xl font-semibold mb-2 text-gray-900 dark:text-white">Starter</h3>
+        <p class="text-sm text-gray-500 font-light dark:text-gray-400 mb-4">Best option for personal use & your next project.</p>
+        <div class="text-5xl font-extrabold mb-2 text-gray-900 dark:text-white">$29</div>
+        <div class="text-sm text-gray-500 dark:text-gray-400 mb-6">/month</div>
+        <ul class="text-left text-sm text-gray-700 dark:text-gray-300 space-y-3 mb-6">
+          <li>✅ Individual configuration</li>
+          <li>✅ No setup, or hidden fees</li>
+          <li>✅ Team size: <strong>1 developer</strong></li>
+          <li>✅ Premium support: <strong>6 months</strong></li>
+          <li>✅ Free updates: <strong>6 months</strong></li>
+        </ul>
+        <a href="#" class="bg-purple-600 hover:bg-purple-700 text-white rounded-lg text-sm px-5 py-2.5 font-medium transition">Get Started</a>
+      </div>
+
+      <!-- Company -->
+      <div class="bg-white dark:bg-gray-800 border dark:border-gray-700 rounded-xl shadow p-8 text-center" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="text-2xl font-semibold mb-2 text-gray-900 dark:text-white">Company</h3>
+        <p class="text-sm text-gray-500 font-light dark:text-gray-400 mb-4">Relevant for multiple users & extended support.</p>
+        <div class="text-5xl font-extrabold mb-2 text-gray-900 dark:text-white">$99</div>
+        <div class="text-sm text-gray-500 dark:text-gray-400 mb-6">/month</div>
+        <ul class="text-left text-sm text-gray-700 dark:text-gray-300 space-y-3 mb-6">
+          <li>✅ Individual configuration</li>
+          <li>✅ No setup, or hidden fees</li>
+          <li>✅ Team size: <strong>10 developers</strong></li>
+          <li>✅ Premium support: <strong>24 months</strong></li>
+          <li>✅ Free updates: <strong>24 months</strong></li>
+        </ul>
+        <a href="#" class="bg-purple-600 hover:bg-purple-700 text-white rounded-lg text-sm px-5 py-2.5 font-medium transition">Get Started</a>
+      </div>
+
+      <!-- Enterprise -->
+      <div class="bg-white dark:bg-gray-800 border dark:border-gray-700 rounded-xl shadow p-8 text-center" data-aos="fade-up" data-aos-delay="300">
+        <h3 class="text-2xl font-semibold mb-2 text-gray-900 dark:text-white">Enterprise</h3>
+        <p class="text-sm text-gray-500 font-light dark:text-gray-400 mb-4">Best for large scale usage and full redistribution.</p>
+        <div class="text-5xl font-extrabold mb-2 text-gray-900 dark:text-white">$499</div>
+        <div class="text-sm text-gray-500 dark:text-gray-400 mb-6">/month</div>
+        <ul class="text-left text-sm text-gray-700 dark:text-gray-300 space-y-3 mb-6">
+          <li>✅ Individual configuration</li>
+          <li>✅ No setup, or hidden fees</li>
+          <li>✅ Team size: <strong>100+ developers</strong></li>
+          <li>✅ Premium support: <strong>36 months</strong></li>
+          <li>✅ Free updates: <strong>36 months</strong></li>
+        </ul>
+        <a href="#" class="bg-purple-600 hover:bg-purple-700 text-white rounded-lg text-sm px-5 py-2.5 font-medium transition">Get Started</a>
       </div>
     </div>
   </div>
