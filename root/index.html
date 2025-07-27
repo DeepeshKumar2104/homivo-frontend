@@ -1,196 +1,72 @@
+<!-- 
+Improve the design of this section also useproper unsplash image because previous image is not visible create more beautifull -->
+
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Homivo</title>
+    <title>Homivo Accommodation Platform</title>
     <meta name="description" content="Homivo - Next-generation housing management. Effortless search, seamless booking, and secure payments." />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-    <link rel="icon" type="image/png" href="/images/favicon.jpg" sizes="32x32" />
     
-    <!-- Animation Libraries -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<script>AOS.init();</script>
 
     <style>
-      body { 
-        font-family: 'Poppins', sans-serif;
-        scroll-behavior: smooth;
+      body { font-family: 'Inter', sans-serif; }
+      .logo-text {
+        font-family: 'Inter', sans-serif;
+        font-weight: 800;
+        letter-spacing: 2px;
+        font-size: 2rem;
+        color: #2563eb;
       }
-      
-      /* Gradient text effect */
-      .gradient-text {
-        background: linear-gradient(90deg, #3B82F6, #8B5CF6, #EC4899);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-        background-size: 200% auto;
-        animation: textShine 3s ease-in-out infinite alternate;
+      .logo-dot {
+        color: #0ea5e9;
       }
-      
-      @keyframes textShine {
-        0% { background-position: 0% center; }
-        100% { background-position: 100% center; }
+      .section-title {
+        font-size: 2.25rem;
+        font-weight: 700;
+        color: #1e293b;
+        letter-spacing: -1px;
       }
-      
-      /* Floating animation */
-      .float {
-        animation: float 5s ease-in-out infinite;
-      }
-      
-      @keyframes float {
-        0% { transform: translateY(0px); }
-        50% { transform: translateY(-15px); }
-        100% { transform: translateY(0px); }
-      }
-      
-      /* Pulse effect */
-      .pulse-effect {
-        box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.4);
-        transform: scale(1);
-        animation: pulse 2s infinite;
-      }
-      
-      @keyframes pulse {
-        0% {
-          transform: scale(0.98);
-          box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.7);
-        }
-        70% {
-          transform: scale(1);
-          box-shadow: 0 0 0 15px rgba(79, 70, 229, 0);
-        }
-        100% {
-          transform: scale(0.98);
-          box-shadow: 0 0 0 0 rgba(79, 70, 229, 0);
-        }
-      }
-      
-      /* Glass effect */
-      .glass {
-        background: rgba(255, 255, 255, 0.7);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-      }
-      
-      /* Card hover effects */
-      .feature-card {
-        transition: all 0.3s ease;
-      }
-      
-      .feature-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-      }
-      
-      /* Nav link effect */
       .nav-link {
         position: relative;
-        transition: color 0.3s ease;
+        transition: color 0.2s;
       }
-      
       .nav-link:after {
         content: '';
         display: block;
         width: 0;
         height: 2px;
-        background: linear-gradient(90deg, #3B82F6, #8B5CF6);
-        transition: width .3s ease;
+        background: #2563eb;
+        transition: width .3s;
         position: absolute;
         left: 0;
         bottom: -4px;
       }
-      
       .nav-link:hover {
-        color: #4f46e5;
+        color: #2563eb;
       }
-      
       .nav-link:hover:after {
         width: 100%;
       }
-      
-      /* Logo text */
-      .logo-text {
-        font-family: 'Poppins', sans-serif;
-        font-weight: 800;
-        letter-spacing: 1px;
-        font-size: 2rem;
-        background: linear-gradient(90deg, #3B82F6, #8B5CF6);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-      }
-      
-      /* Button gradient */
-      .btn-gradient {
-        background: linear-gradient(90deg, #4F46E5, #7C3AED);
-        transition: all 0.3s ease;
-      }
-      
-      .btn-gradient:hover {
-        background: linear-gradient(90deg, #4338CA, #6D28D9);
-        transform: translateY(-2px);
-        box-shadow: 0 10px 20px rgba(79, 70, 229, 0.4);
-      }
-      
-      /* Blob animation */
-      @keyframes blob {
-        0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
-        25% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
-        50% { border-radius: 50% 60% 30% 40% / 40% 30% 70% 60%; }
-        75% { border-radius: 40% 30% 70% 60% / 60% 70% 40% 30%; }
-      }
-      
-      .animate-blob {
-        animation: blob 8s ease-in-out infinite;
-      }
-      
-      .animation-delay-2000 {
-        animation-delay: 2s;
-      }
-      
-      .animation-delay-4000 {
-        animation-delay: 4s;
-      }
-      
-      /* Background shape blobs */
-      .shape-blob {
-        position: absolute;
-        border-radius: 50%;
-        filter: blur(40px);
-        z-index: 0;
-        opacity: 0.4;
-      }
-      
-      /* Testimonial card animation */
-      .testimonial-card {
-        transition: all 0.3s ease;
-      }
-      
-      .testimonial-card:hover {
-        transform: translateY(-10px);
+      html {
+        scroll-behavior: smooth;
       }
     </style>
   </head>
-  <body>
-    <!-- Decorative Background Elements -->
-    <div class="fixed shape-blob animate-blob" style="background: #818CF8; top: 10%; left: 5%; width: 300px; height: 300px; z-index: -1;"></div>
-    <div class="fixed shape-blob animate-blob animation-delay-2000" style="background: #C084FC; top: 40%; right: 5%; width: 400px; height: 400px; z-index: -1;"></div>
-    <div class="fixed shape-blob animate-blob animation-delay-4000" style="background: #60A5FA; bottom: 10%; left: 15%; width: 350px; height: 350px; z-index: -1;"></div>
-    <div class="fixed shape-blob animate-blob" style="background: #F472B6; top: 60%; right: 15%; width: 250px; height: 250px; z-index: -1;"></div>
-  
+  <body class="bg-gray-50">
     <!-- Header / Navigation -->
-    <header class="fixed top-0 left-0 z-40 flex w-full items-center justify-between px-6 py-4 glass">
+    <header class="fixed top-0 left-0 z-40 flex w-full items-center justify-between bg-white px-6 py-4 shadow-sm">
       <div class="flex items-center">
-        <a href="#hero" class="logo-text tracking-tight hover:opacity-80 transition">
-          Homivo<span class="text-indigo-500">.</span>
-        </a>
+        <span class="logo-text tracking-tight">Homivo<span class="logo-dot"></span></span>
       </div>
-      <nav class="hidden space-x-6 md:flex">
+      <nav class="hidden space-x-8 md:flex">
         <a href="#vision" class="nav-link font-medium text-gray-700">Vision</a>
         <a href="#features" class="nav-link font-medium text-gray-700">Features</a>
         <a href="#categories" class="nav-link font-medium text-gray-700">Categories</a>
@@ -202,30 +78,24 @@
         <a href="#waitlist" class="nav-link font-medium text-gray-700">Waitlist</a>
         <a href="#contact" class="nav-link font-medium text-gray-700">Contact</a>
       </nav>
-      <a href="#waitlist" class="hidden btn-gradient rounded-full px-6 py-2 font-semibold text-white shadow-lg md:inline-block">
-        Join Waitlist
-      </a>
-      <!-- Mobile Nav Button -->
+      <a href="#waitlist" class="hidden rounded-lg bg-blue-600 px-6 py-2 font-semibold text-white shadow transition hover:bg-blue-700 md:inline-block">Join Waitlist</a>
+      <!-- Mobile Nav -->
       <div class="md:hidden">
         <button id="mobile-menu-btn" class="focus:outline-none">
-          <svg class="h-7 w-7 text-indigo-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <svg class="h-7 w-7 text-blue-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
           </svg>
         </button>
       </div>
     </header>
-    
     <!-- Mobile Navigation Drawer -->
-    <div id="mobile-menu" class="fixed inset-0 z-50 hidden bg-black bg-opacity-50 backdrop-blur-sm">
-      <div class="absolute top-0 right-0 flex h-full w-72 flex-col space-y-6 bg-white p-8 shadow-2xl">
-        <div class="flex justify-between items-center mb-6">
-          <span class="logo-text text-xl">Homivo<span class="text-indigo-500">.</span></span>
-          <button id="close-mobile-menu" class="focus:outline-none">
-            <svg class="h-6 w-6 text-indigo-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
+    <div id="mobile-menu" class="bg-opacity-40 fixed inset-0 z-50 hidden bg-black">
+      <div class="absolute top-0 right-0 flex h-full w-64 flex-col space-y-6 bg-white p-8 shadow-lg">
+        <button id="close-mobile-menu" class="mb-4 self-end">
+          <svg class="h-7 w-7 text-blue-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
         <a href="#vision" class="nav-link font-medium text-gray-700" onclick="closeMobileMenu()">Vision</a>
         <a href="#features" class="nav-link font-medium text-gray-700" onclick="closeMobileMenu()">Features</a>
         <a href="#categories" class="nav-link font-medium text-gray-700" onclick="closeMobileMenu()">Categories</a>
@@ -236,6 +106,887 @@
         <a href="#testimonials" class="nav-link font-medium text-gray-700" onclick="closeMobileMenu()">Testimonials</a>
         <a href="#waitlist" class="nav-link font-medium text-gray-700" onclick="closeMobileMenu()">Waitlist</a>
         <a href="#contact" class="nav-link font-medium text-gray-700" onclick="closeMobileMenu()">Contact</a>
-        <a href="#waitlist" class="mt-4 btn-gradient rounded-full px-6 py-3 font-semibold text-white shadow-lg text-center">Join Waitlist</a>
+        <a href="#waitlist" class="mt-4 rounded-lg bg-blue-600 px-6 py-2 font-semibold text-white shadow transition hover:bg-blue-700">Join Waitlist</a>
       </div>
     </div>
+
+<!-- Include AOS and Lottie (Add in <head> or before </body>) -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<script>AOS.init();</script>
+
+<!-- HERO SECTION -->
+<section id="hero" class="relative bg-gradient-to-br from-blue-50 via-white to-blue-100 pt-32 pb-20 px-6 md:px-16 overflow-hidden font-inter">
+  <!-- Decorative SVG Blobs -->
+  <svg class="absolute top-0 left-0 w-72 h-72 opacity-20 text-blue-200 pointer-events-none" fill="currentColor" viewBox="0 0 400 400">
+    <circle cx="200" cy="200" r="200"/>
+  </svg>
+  <svg class="absolute bottom-0 right-0 w-80 h-80 opacity-10 text-indigo-200 pointer-events-none" fill="currentColor" viewBox="0 0 400 400">
+    <rect width="400" height="400" rx="200"/>
+  </svg>
+  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
+    <!-- LEFT TEXT SECTION -->
+    <div data-aos="fade-right">
+      <span class="inline-block bg-blue-100 text-blue-700 font-semibold rounded-full px-4 py-1 mb-6 text-base shadow">🏠 India's Next-Gen Housing Platform</span>
+      <h1 class="text-4xl md:text-6xl font-extrabold text-blue-700 leading-tight mb-4">
+        Find Your <span class="text-indigo-600">Next Home</span>
+        <br class="hidden md:block" />
+        <span class="text-blue-600">Effortlessly</span>
+      </h1>
+      <p class="mt-4 text-lg text-gray-600 leading-relaxed max-w-xl">
+        Discover, book, and manage accommodations with ease.<br>
+        <span class="text-blue-600 font-semibold">Simple. Secure. Smart.</span>
+      </p>
+      <!-- Feature Badges -->
+      <div class="flex flex-wrap gap-3 mt-6">
+        <span class="flex items-center gap-2 bg-white/80 border border-blue-100 text-blue-700 font-medium px-4 py-2 rounded-full shadow-sm text-sm">
+          <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+          Verified Listings
+        </span>
+        <span class="flex items-center gap-2 bg-white/80 border border-blue-100 text-blue-700 font-medium px-4 py-2 rounded-full shadow-sm text-sm">
+          <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 12l2 2 4-4"/></svg>
+          Secure Payments
+        </span>
+        <span class="flex items-center gap-2 bg-white/80 border border-blue-100 text-blue-700 font-medium px-4 py-2 rounded-full shadow-sm text-sm">
+          <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3"/></svg>
+          24/7 Support
+        </span>
+      </div>
+      <!-- CTA BUTTON -->
+      <div class="mt-10 flex flex-col sm:flex-row sm:items-center gap-4">
+        <a href="#waitlist" class="inline-block bg-gradient-to-r from-blue-600 to-indigo-500 hover:from-indigo-600 hover:to-blue-700 text-white text-lg font-semibold px-8 py-4 rounded-2xl shadow-xl transition duration-200">
+          🚀 Join the Waitlist
+        </a>
+        <p class="text-sm text-gray-500">No spam. Just real housing updates.</p>
+      </div>
+      <!-- Contact email directly in Hero -->
+      <div class="mt-6">
+        <p class="text-sm text-gray-600">
+          Questions? Reach us at
+          <a href="mailto:support@homivo.in" class="text-blue-700 hover:underline font-medium">support@homivo.in</a>
+        </p>
+      </div>
+    </div>
+    <!-- RIGHT IMAGE: Beautiful Unsplash Home/Apartment -->
+    <div class="flex justify-center items-center relative" data-aos="fade-left">
+      <div class="relative">
+        <img
+          src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80"
+          alt="Modern Cozy Apartment"
+          class="w-full max-w-md rounded-3xl shadow-2xl border-4 border-white object-cover"
+          style="min-height:340px;"
+        />
+        <!-- Subtle animated SVG shape -->
+        <svg class="absolute top-8 right-8 w-12 h-12 opacity-20 animate-bounce pointer-events-none" fill="currentColor" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="50"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+   <!-- Vision Section -->
+<section id="vision" class="scroll-mt-24 bg-gradient-to-br from-blue-50 via-white to-blue-100 py-24 relative overflow-hidden">
+  <!-- Decorative SVG Shape Top Right -->
+  <svg class="absolute top-0 right-0 w-64 h-64 opacity-20 text-blue-200 pointer-events-none" fill="currentColor" viewBox="0 0 400 400">
+    <circle cx="200" cy="200" r="200"/>
+  </svg>
+  <div class="container mx-auto px-6 text-center relative z-10">
+    <h2 class="section-title mb-4 text-blue-700" data-aos="fade-down">Our Vision</h2>
+    <p class="mx-auto mb-10 max-w-2xl text-lg text-gray-600" data-aos="fade-up" data-aos-delay="100">
+      Bridging the gap between traditional accommodation and modern, on-demand technology.<br>
+      <span class="font-semibold text-blue-700">Homivo empowers tenants, owners, and enterprises</span> with a secure, scalable, and seamless housing experience.
+    </p>
+    <div class="flex flex-col md:flex-row items-center justify-center gap-10">
+      <div class="md:w-1/2" data-aos="fade-right" data-aos-delay="200">
+        <img 
+          src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=900&q=80"
+          alt="Modern Vision"
+          class="mx-auto max-w-xl rounded-3xl shadow-2xl border-4 border-white"
+          style="object-fit: cover; min-height: 320px;"
+        />
+      </div>
+      <div class="md:w-1/2 flex flex-col items-center md:items-start mt-10 md:mt-0" data-aos="fade-left" data-aos-delay="300">
+        <div class="bg-white bg-opacity-80 rounded-2xl shadow-lg p-8 max-w-md mx-auto border border-blue-100">
+          <h3 class="text-2xl font-bold text-blue-700 mb-4">Why Homivo?</h3>
+          <ul class="space-y-4 text-left">
+            <li class="flex items-center gap-3">
+              <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-600">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              </span>
+              <span>Modern, tech-driven housing experience</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-600">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 12l2 2 4-4"/></svg>
+              </span>
+              <span>Trust, transparency, and security for all</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-600">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3"/></svg>
+              </span>
+              <span>Empowering tenants & owners with data</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-600">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="5" rx="2"/><path stroke-linecap="round" stroke-linejoin="round" d="M2 10h20"/></svg>
+              </span>
+              <span>Seamless, scalable, and future-ready</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Decorative SVG Shape Bottom Left -->
+  <svg class="absolute bottom-0 left-0 w-64 h-64 opacity-10 text-blue-300 pointer-events-none" fill="currentColor" viewBox="0 0 400 400">
+    <rect width="400" height="400" rx="200"/>
+  </svg>
+</section>
+
+    <!-- Features Section -->
+   <section id="features" class="scroll-mt-24 bg-gradient-to-br from-blue-50 via-white to-blue-100 py-16 md:py-24 relative overflow-hidden">
+  <!-- Decorative SVGs -->
+  <svg class="absolute top-0 left-0 w-40 h-40 md:w-64 md:h-64 opacity-10 text-blue-200 pointer-events-none" fill="currentColor" viewBox="0 0 400 400">
+    <circle cx="200" cy="200" r="200"/>
+  </svg>
+  <svg class="absolute bottom-0 right-0 w-44 h-44 md:w-72 md:h-72 opacity-10 text-indigo-200 pointer-events-none" fill="currentColor" viewBox="0 0 400 400">
+    <rect width="400" height="400" rx="200"/>
+  </svg>
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
+      <!-- Left: Feature Content -->
+      <div class="text-left" data-aos="fade-right">
+        <h2 class="section-title mb-6 text-blue-700 font-bold text-3xl sm:text-4xl md:text-5xl" data-aos="fade-down" data-aos-delay="0">
+          Core Features
+        </h2>
+        <p class="mb-8 md:mb-10 max-w-xl text-base sm:text-lg text-gray-600" data-aos="fade-up" data-aos-delay="100">
+          Homivo is packed with features for every user group.
+        </p>
+        <div class="space-y-5 sm:space-y-6">
+          <!-- Feature 1 -->
+          <div class="flex items-start gap-3 sm:gap-4 rounded-2xl shadow-lg border border-blue-100 bg-white bg-opacity-80 p-4 sm:p-5" data-aos="fade-right" data-aos-delay="200">
+            <span class="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-blue-100 text-blue-600 shadow">
+              <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            <div>
+              <h4 class="font-semibold text-blue-700 text-base sm:text-lg mb-1">User Management</h4>
+              <p class="text-gray-600 text-xs sm:text-sm">Secure sign-up, login, and profile management with KYC.</p>
+            </div>
+          </div>
+          <!-- Feature 2 -->
+          <div class="flex items-start gap-3 sm:gap-4 rounded-2xl shadow-lg border border-blue-100 bg-white bg-opacity-80 p-4 sm:p-5" data-aos="fade-right" data-aos-delay="300">
+            <span class="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-blue-100 text-blue-600 shadow">
+              <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <rect width="20" height="14" x="2" y="5" rx="2"/>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2 10h20"/>
+              </svg>
+            </span>
+            <div>
+              <h4 class="font-semibold text-blue-700 text-base sm:text-lg mb-1">Property Listing</h4>
+              <p class="text-gray-600 text-xs sm:text-sm">List, update, and manage properties with media and analytics.</p>
+            </div>
+          </div>
+          <!-- Feature 3 -->
+          <div class="flex items-start gap-3 sm:gap-4 rounded-2xl shadow-lg border border-blue-100 bg-white bg-opacity-80 p-4 sm:p-5" data-aos="fade-right" data-aos-delay="400">
+            <span class="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-blue-100 text-blue-600 shadow">
+              <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"/>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 12l2 2 4-4"/>
+              </svg>
+            </span>
+            <div>
+              <h4 class="font-semibold text-blue-700 text-base sm:text-lg mb-1">Booking & Payment</h4>
+              <p class="text-gray-600 text-xs sm:text-sm">Seamless booking lifecycle with secure payment integration.</p>
+            </div>
+          </div>
+          <!-- Feature 4 -->
+          <div class="flex items-start gap-3 sm:gap-4 rounded-2xl shadow-lg border border-blue-100 bg-white bg-opacity-80 p-4 sm:p-5" data-aos="fade-right" data-aos-delay="500">
+            <span class="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-blue-100 text-blue-600 shadow">
+              <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3"/>
+              </svg>
+            </span>
+            <div>
+              <h4 class="font-semibold text-blue-700 text-base sm:text-lg mb-1">Support & Chat</h4>
+              <p class="text-gray-600 text-xs sm:text-sm">Real-time messaging, complaint management, and notifications.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Right: Feature Image -->
+      <div class="flex justify-center items-center mt-10 md:mt-0" data-aos="fade-left" data-aos-delay="300">
+        <div class="relative w-full max-w-xs sm:max-w-sm md:max-w-md">
+          <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=500&q=80"
+            alt="Homivo Features"
+            class="rounded-2xl sm:rounded-3xl shadow-2xl border-4 border-white object-cover w-full"
+            style="min-height:220px;"
+          />
+          <!-- Decorative floating SVG -->
+          <svg class="absolute -top-6 -right-6 w-10 h-10 sm:w-16 sm:h-16 opacity-20 text-blue-400 pointer-events-none" fill="currentColor" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="50"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Categories Section -->
+    <!-- Responsive SaaS Landing Section with Tailwind CSS & AOS -->
+    <section id = "categories" class="scroll-mt-24 bg-gradient-to-br from-blue-50 via-white to-blue-100 py-20 md:py-28 relative overflow-hidden font-inter">
+  <!-- Decorative SVGs -->
+  <svg class="absolute top-0 left-0 w-40 h-40 md:w-64 md:h-64 opacity-10 text-blue-200 pointer-events-none" fill="currentColor" viewBox="0 0 400 400">
+    <circle cx="200" cy="200" r="200"/>
+  </svg>
+  <svg class="absolute bottom-0 right-0 w-44 h-44 md:w-72 md:h-72 opacity-10 text-indigo-200 pointer-events-none" fill="currentColor" viewBox="0 0 400 400">
+    <rect width="400" height="400" rx="200"/>
+  </svg>
+  <div class="container mx-auto px-6 md:px-12 relative z-10">
+    <div class="flex flex-col-reverse md:flex-row items-center gap-10 md:gap-20">
+      <!-- Left: Text Content -->
+      <div class="w-full md:w-1/2 text-left" data-aos="fade-right" data-aos-delay="100">
+        <h2 class="text-3xl md:text-5xl font-extrabold text-blue-700 mb-6" data-aos="fade-down" data-aos-delay="0">
+          Accommodation Categories
+        </h2>
+        <p class="text-gray-600 text-base md:text-lg max-w-xl mb-8" data-aos="fade-up" data-aos-delay="150">
+          Homivo supports a wide range of accommodation types for every need. Find the perfect fit for your lifestyle, whether you’re a student, professional, or traveler.
+        </p>
+        <ul class="space-y-5">
+          <li class="flex items-center gap-4" data-aos="fade-right" data-aos-delay="200">
+            <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shadow">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <rect width="20" height="14" x="2" y="5" rx="2"/>
+              </svg>
+            </span>
+            <span class="font-semibold text-blue-700">Flat/Apartment</span>
+          </li>
+          <li class="flex items-center gap-4" data-aos="fade-right" data-aos-delay="250">
+            <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shadow">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"/>
+              </svg>
+            </span>
+            <span class="font-semibold text-blue-700">Paying Guest (PG)</span>
+          </li>
+          <li class="flex items-center gap-4" data-aos="fade-right" data-aos-delay="300">
+            <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shadow">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            <span class="font-semibold text-blue-700">Hostel</span>
+          </li>
+          <li class="flex items-center gap-4" data-aos="fade-right" data-aos-delay="350">
+            <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shadow">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <rect width="20" height="14" x="2" y="5" rx="2"/>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2 10h20"/>
+              </svg>
+            </span>
+            <span class="font-semibold text-blue-700">Co-living Space</span>
+          </li>
+          <li class="flex items-center gap-4" data-aos="fade-right" data-aos-delay="400">
+            <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shadow">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3"/>
+              </svg>
+            </span>
+            <span class="font-semibold text-blue-700">Short-Term Stay</span>
+          </li>
+        </ul>
+        <a href="#waitlist" class="inline-block mt-10 px-6 py-3 rounded-2xl bg-blue-600 text-white font-semibold text-lg shadow-lg transition hover:bg-blue-700" data-aos="fade-up" data-aos-delay="500">
+          Join Waitlist
+        </a>
+      </div>
+      <!-- Right: Image -->
+      <div class="w-full md:w-1/2 flex justify-center items-center mb-10 md:mb-0" data-aos="fade-left" data-aos-delay="200">
+        <div class="relative w-full max-w-xs sm:max-w-sm md:max-w-md">
+          <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=600&q=80"
+            alt="Modern Accommodation"
+            class="rounded-2xl md:rounded-3xl shadow-2xl border-4 border-white object-cover w-full"
+            style="min-height:220px;"
+          />
+          <!-- Decorative floating SVG -->
+          <svg class="absolute -top-6 -right-6 w-10 h-10 sm:w-16 sm:h-16 opacity-20 text-blue-400 pointer-events-none" fill="currentColor" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="50"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- How It Works Section -->
+<section id="how" class="scroll-mt-24 bg-gradient-to-br from-blue-50 via-white to-blue-100 py-20 md:py-28 relative overflow-hidden font-inter">
+  <!-- Decorative SVGs -->
+  <svg class="absolute top-0 left-0 w-40 h-40 md:w-64 md:h-64 opacity-10 text-blue-200 pointer-events-none" fill="currentColor" viewBox="0 0 400 400">
+    <circle cx="200" cy="200" r="200"/>
+  </svg>
+  <svg class="absolute bottom-0 right-0 w-44 h-44 md:w-72 md:h-72 opacity-10 text-indigo-200 pointer-events-none" fill="currentColor" viewBox="0 0 400 400">
+    <rect width="400" height="400" rx="200"/>
+  </svg>
+  <div class="container mx-auto px-6 md:px-12 relative z-10">
+    <div class="flex flex-col-reverse md:flex-row items-center gap-10 md:gap-20">
+      <!-- Left: Steps Content -->
+      <div class="w-full md:w-1/2 text-left" data-aos="fade-right" data-aos-delay="100">
+        <h2 class="text-3xl md:text-5xl font-extrabold text-blue-700 mb-6" data-aos="fade-down" data-aos-delay="0">
+          How It Works
+        </h2>
+        <p class="text-gray-600 text-base md:text-lg max-w-xl mb-8" data-aos="fade-up" data-aos-delay="150">
+          Get started in just a few steps—Homivo is designed for simplicity and speed.
+        </p>
+        <ul class="space-y-6">
+          <li class="flex items-center gap-4" data-aos="fade-right" data-aos-delay="200">
+            <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shadow font-bold text-lg">
+              1
+            </span>
+            <span class="font-semibold text-blue-700">Sign up and create your profile</span>
+          </li>
+          <li class="flex items-center gap-4" data-aos="fade-right" data-aos-delay="300">
+            <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shadow font-bold text-lg">
+              2
+            </span>
+            <span class="font-semibold text-blue-700">Browse or list properties</span>
+          </li>
+          <li class="flex items-center gap-4" data-aos="fade-right" data-aos-delay="400">
+            <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shadow font-bold text-lg">
+              3
+            </span>
+            <span class="font-semibold text-blue-700">Book, pay, and move in!</span>
+          </li>
+        </ul>
+        <a href="#waitlist" class="inline-block mt-10 px-6 py-3 rounded-2xl bg-blue-600 text-white font-semibold text-lg shadow-lg transition hover:bg-blue-700" data-aos="fade-up" data-aos-delay="500">
+          Join Waitlist
+        </a>
+      </div>
+      <!-- Right: Image -->
+      <div class="w-full md:w-1/2 flex justify-center items-center mb-10 md:mb-0" data-aos="fade-left" data-aos-delay="200">
+        <div class="relative w-full max-w-xs sm:max-w-sm md:max-w-md">
+          <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80"
+            alt="How It Works"
+            class="rounded-2xl md:rounded-3xl shadow-2xl border-4 border-white object-cover w-full"
+            style="min-height:220px;"
+          />
+          <!-- Decorative floating SVG -->
+          <svg class="absolute -top-6 -right-6 w-10 h-10 sm:w-16 sm:h-16 opacity-20 text-blue-400 pointer-events-none" fill="currentColor" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="50"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Analytics Section -->
+<section id="analytics" class="scroll-mt-24 bg-gradient-to-br from-blue-50 via-white to-blue-100 py-20 md:py-28 relative overflow-hidden font-inter">
+  <!-- Decorative SVGs -->
+  <svg class="absolute top-0 left-0 w-40 h-40 md:w-64 md:h-64 opacity-10 text-blue-200 pointer-events-none" fill="currentColor" viewBox="0 0 400 400">
+    <circle cx="200" cy="200" r="200"/>
+  </svg>
+  <svg class="absolute bottom-0 right-0 w-44 h-44 md:w-72 md:h-72 opacity-10 text-indigo-200 pointer-events-none" fill="currentColor" viewBox="0 0 400 400">
+    <rect width="400" height="400" rx="200"/>
+  </svg>
+  <div class="container mx-auto px-6 md:px-12 relative z-10">
+    <div class="flex flex-col md:flex-row items-center gap-10 md:gap-20">
+      <!-- Left: Text Content -->
+      <div class="w-full md:w-1/2 text-left" data-aos="fade-right" data-aos-delay="100">
+        <h2 class="text-3xl md:text-5xl font-extrabold text-blue-700 mb-6" data-aos="fade-down" data-aos-delay="0">
+          Platform Analytics
+        </h2>
+        <p class="text-gray-600 text-base md:text-lg max-w-xl mb-8" data-aos="fade-up" data-aos-delay="150">
+          Real-time insights and analytics for owners, tenants, and admins. Make smarter decisions with beautiful dashboards and actionable data.
+        </p>
+        <ul class="space-y-6">
+          <li class="flex items-center gap-4" data-aos="fade-right" data-aos-delay="200">
+            <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shadow">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 3v18h18"/>
+              </svg>
+            </span>
+            <span class="font-semibold text-blue-700">Owner Dashboard: Track views, bookings, and performance</span>
+          </li>
+          <li class="flex items-center gap-4" data-aos="fade-right" data-aos-delay="250">
+            <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shadow">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"/>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 12l2 2 4-4"/>
+              </svg>
+            </span>
+            <span class="font-semibold text-blue-700">User Analytics: See your activity, booking history, and recommendations</span>
+          </li>
+          <li class="flex items-center gap-4" data-aos="fade-right" data-aos-delay="300">
+            <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shadow">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <rect width="20" height="14" x="2" y="5" rx="2"/>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2 10h20"/>
+              </svg>
+            </span>
+            <span class="font-semibold text-blue-700">Admin Analytics: Monitor platform health, compliance, and engagement</span>
+          </li>
+        </ul>
+        <a href="#waitlist" class="inline-block mt-10 px-6 py-3 rounded-lg bg-blue-600 text-white font-semibold text-lg shadow-lg transition hover:bg-blue-700" data-aos="fade-up" data-aos-delay="400">
+          Get Started
+        </a>
+      </div>
+      <!-- Right: Analytics Image -->
+      <div class="w-full md:w-1/2 flex justify-center items-center mb-10 md:mb-0" data-aos="fade-left" data-aos-delay="200">
+        <div class="relative w-full max-w-xs sm:max-w-sm md:max-w-md">
+          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80"
+            alt="Analytics Dashboard"
+            class="rounded-2xl md:rounded-3xl shadow-2xl border-4 border-white object-cover w-full max-w-full"
+            style="min-height:220px;"
+          />
+          <!-- Decorative floating SVG -->
+          <svg class="absolute -top-6 -right-6 w-10 h-10 sm:w-16 sm:h-16 opacity-20 text-blue-400 pointer-events-none" fill="currentColor" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="50"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Security Section -->
+<section id="security" class="scroll-mt-24 bg-gradient-to-br from-blue-50 via-white to-blue-100 py-20 md:py-28 relative overflow-hidden font-inter">
+  <!-- Decorative SVGs -->
+  <svg class="absolute top-0 left-0 w-40 h-40 md:w-64 md:h-64 opacity-10 text-blue-200 pointer-events-none" fill="currentColor" viewBox="0 0 400 400">
+    <circle cx="200" cy="200" r="200"/>
+  </svg>
+  <svg class="absolute bottom-0 right-0 w-44 h-44 md:w-72 md:h-72 opacity-10 text-indigo-200 pointer-events-none" fill="currentColor" viewBox="0 0 400 400">
+    <rect width="400" height="400" rx="200"/>
+  </svg>
+  <div class="container mx-auto px-6 md:px-12 relative z-10">
+    <div class="flex flex-col md:flex-row items-center gap-12 md:gap-20">
+      <!-- Left: Security Illustration -->
+      <div class="w-full md:w-1/2 text-left" data-aos="fade-left" data-aos-delay="200">
+        <h2 class="text-3xl md:text-5xl font-extrabold text-blue-700 mb-6" data-aos="fade-down" data-aos-delay="0">
+          Security & Compliance
+        </h2>
+        <p class="text-gray-600 text-base md:text-lg max-w-xl mb-8" data-aos="fade-up" data-aos-delay="150">
+          Homivo follows industry best practices for security and compliance. Your data and privacy are protected at every step.
+        </p>
+        <ul class="space-y-6">
+          <li class="flex items-center gap-4" data-aos="fade-right" data-aos-delay="250">
+            <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shadow">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <rect width="20" height="14" x="2" y="5" rx="2"/>
+              </svg>
+            </span>
+            <span class="font-semibold text-blue-700">RBAC: Role-based access control for all resources</span>
+          </li>
+          <li class="flex items-center gap-4" data-aos="fade-right" data-aos-delay="300">
+            <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shadow">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"/>
+              </svg>
+            </span>
+            <span class="font-semibold text-blue-700">Data Encryption: At rest and in transit</span>
+          </li>
+          <li class="flex items-center gap-4" data-aos="fade-right" data-aos-delay="350">
+            <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shadow">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            <span class="font-semibold text-blue-700">GDPR Compliance: We adhere to data protection regulations</span>
+          </li>
+          <li class="flex items-center gap-4" data-aos="fade-right" data-aos-delay="400">
+            <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shadow">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3"/>
+              </svg>
+            </span>
+            <span class="font-semibold text-blue-700">Audit Trails: Detailed logs of all sensitive operations</span>
+          </li>
+        </ul>
+        <a href="#waitlist" class="inline-block mt-10 px-6 py-3 rounded-lg bg-blue-600 text-white font-semibold text-lg shadow-lg transition hover:bg-blue-700" data-aos="fade-up" data-aos-delay="500">
+          Learn More
+        </a>
+      </div>
+      <!-- Right: Security Content -->
+       <div class="w-full md:w-1/2 flex justify-center items-center mb-10 md:mb-0" data-aos="fade-right" data-aos-delay="100">
+        <div class="relative w-full max-w-xs sm:max-w-sm md:max-w-md">
+          <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80"
+            alt="Security Team"
+            class="rounded-2xl md:rounded-3xl shadow-2xl border-4 border-white object-cover w-full max-w-full"
+            style="min-height:220px;"
+          />
+          <!-- Decorative floating SVG -->
+          <svg class="absolute -top-6 -right-6 w-10 h-10 sm:w-16 sm:h-16 opacity-20 text-blue-400 pointer-events-none" fill="currentColor" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="50"/>
+          </svg>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+    <!-- Monetization Section -->
+    <section id="monetization" class="scroll-mt-24 bg-gradient-to-br from-blue-50 via-white to-blue-100 py-20 md:py-28 relative overflow-hidden font-inter">
+  <!-- Decorative SVGs -->
+  <svg class="absolute top-0 left-0 w-40 h-40 md:w-64 md:h-64 opacity-10 text-blue-200 pointer-events-none" fill="currentColor" viewBox="0 0 400 400">
+    <circle cx="200" cy="200" r="200"/>
+  </svg>
+  <svg class="absolute bottom-0 right-0 w-44 h-44 md:w-72 md:h-72 opacity-10 text-indigo-200 pointer-events-none" fill="currentColor" viewBox="0 0 400 400">
+    <rect width="400" height="400" rx="200"/>
+  </svg>
+  <div class="container mx-auto px-6 md:px-12 relative z-10">
+    <div class="flex flex-col md:flex-row items-center gap-12 md:gap-20">
+      <!-- Left: Monetization Content -->
+      <div class="w-full md:w-1/2 text-left" data-aos="fade-right" data-aos-delay="100">
+        <h2 class="text-3xl md:text-5xl font-extrabold text-blue-700 mb-6" data-aos="fade-down" data-aos-delay="0">
+          Monetization Strategy
+        </h2>
+        <p class="text-gray-600 text-base md:text-lg max-w-xl mb-8" data-aos="fade-up" data-aos-delay="150">
+          Multiple revenue streams for platform sustainability and growth.
+        </p>
+        <ul class="space-y-6">
+          <li class="flex items-start gap-4" data-aos="fade-right" data-aos-delay="200">
+            <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shadow">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <rect width="20" height="14" x="2" y="5" rx="2"/>
+              </svg>
+            </span>
+            <div>
+              <span class="font-semibold text-blue-700">Featured Listings</span>
+              <p class="text-gray-600 text-sm">Owners can pay to promote their listings.</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-4" data-aos="fade-right" data-aos-delay="250">
+            <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shadow">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"/>
+              </svg>
+            </span>
+            <div>
+              <span class="font-semibold text-blue-700">Subscription Plans</span>
+              <p class="text-gray-600 text-sm">Advanced analytics and greater visibility for owners.</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-4" data-aos="fade-right" data-aos-delay="300">
+            <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shadow">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            <div>
+              <span class="font-semibold text-blue-700">Booking Commissions</span>
+              <p class="text-gray-600 text-sm">Commission on every booking made through the platform.</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-4" data-aos="fade-right" data-aos-delay="350">
+            <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shadow">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <rect width="20" height="14" x="2" y="5" rx="2"/>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2 10h20"/>
+              </svg>
+            </span>
+            <div>
+              <span class="font-semibold text-blue-700">Enterprise APIs</span>
+              <p class="text-gray-600 text-sm">Custom integrations for large enterprises.</p>
+            </div>
+          </li>
+        </ul>
+        <a href="#waitlist" class="inline-block mt-10 px-6 py-3 rounded-lg bg-blue-600 text-white font-semibold text-lg shadow-lg transition hover:bg-blue-700" data-aos="fade-up" data-aos-delay="400">
+          Learn More
+        </a>
+      </div>
+      <!-- Right: Monetization Image -->
+      <div class="w-full md:w-1/2 flex justify-center items-center mb-10 md:mb-0" data-aos="fade-left" data-aos-delay="200">
+        <div class="relative w-full max-w-xs sm:max-w-sm md:max-w-md">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
+            alt="Monetization Strategy"
+            class="rounded-2xl md:rounded-3xl shadow-2xl border-4 border-white object-cover w-full max-w-full"
+            style="min-height:220px;"
+          />
+          <!-- Decorative floating SVG -->
+          <svg class="absolute -top-6 -right-6 w-10 h-10 sm:w-16 sm:h-16 opacity-20 text-blue-400 pointer-events-none" fill="currentColor" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="50"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Testimonials Section -->
+<section id="testimonials" class="scroll-mt-24 bg-gradient-to-br from-blue-50 via-white to-blue-100 py-24 md:py-32 relative overflow-hidden font-inter">
+  <!-- Decorative SVGs -->
+  <svg class="absolute top-0 left-0 w-40 h-40 md:w-64 md:h-64 opacity-10 text-blue-200 pointer-events-none" fill="currentColor" viewBox="0 0 400 400">
+    <circle cx="200" cy="200" r="200"/>
+  </svg>
+  <svg class="absolute bottom-0 right-0 w-44 h-44 md:w-72 md:h-72 opacity-10 text-indigo-200 pointer-events-none" fill="currentColor" viewBox="0 0 400 400">
+    <rect width="400" height="400" rx="200"/>
+  </svg>
+  <div class="container mx-auto px-6 md:px-12 relative z-10">
+    <div class="text-center max-w-xl mx-auto mb-12">
+      <h2 class="text-5xl md:text-6xl font-extrabold mb-4 text-gray-700" data-aos="fade-down" data-aos-delay="0">
+        What people <br>are saying.
+      </h2>
+      <h3 class="text-xl mb-5 font-light text-gray-600" data-aos="fade-up" data-aos-delay="100">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      </h3>
+      <div class="text-center mb-10">
+        <span class="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
+        <span class="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
+        <span class="inline-block w-40 h-1 rounded-full bg-indigo-500"></span>
+        <span class="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
+        <span class="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Testimonial 1 -->
+      <div class="bg-white border border-gray-200 rounded-2xl p-8 shadow transition hover:shadow-lg flex flex-col" data-aos="fade-up" data-aos-delay="100">
+        <div class="flex items-center mb-4">
+          <img src="https://i.pravatar.cc/100?img=1" alt="Kenzie Edgar" class="w-12 h-12 rounded-full border border-gray-200 object-cover mr-4">
+          <span class="font-bold uppercase text-gray-700 text-base">Kenzie Edgar.</span>
+        </div>
+        <p class="text-gray-600 text-base leading-relaxed">
+          <span class="text-lg leading-none italic font-bold text-gray-400 mr-1">"</span>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos sunt ratione dolor exercitationem minima quas itaque saepe quasi architecto vel! Accusantium, vero sint recusandae cum tempora nemo commodi soluta deleniti.
+          <span class="text-lg leading-none italic font-bold text-gray-400 ml-1">"</span>
+        </p>
+      </div>
+      <!-- Testimonial 2 -->
+      <div class="bg-white border border-gray-200 rounded-2xl p-8 shadow transition hover:shadow-lg flex flex-col" data-aos="fade-up" data-aos-delay="200">
+        <div class="flex items-center mb-4">
+          <img src="https://i.pravatar.cc/100?img=3" alt="Tommie Ewart" class="w-12 h-12 rounded-full border border-gray-200 object-cover mr-4">
+          <span class="font-bold uppercase text-gray-700 text-base">Tommie Ewart.</span>
+        </div>
+        <p class="text-gray-600 text-base leading-relaxed">
+          <span class="text-lg leading-none italic font-bold text-gray-400 mr-1">"</span>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, obcaecati ullam excepturi dicta error deleniti sequi.
+          <span class="text-lg leading-none italic font-bold text-gray-400 ml-1">"</span>
+        </p>
+      </div>
+      <!-- Testimonial 3 -->
+      <div class="bg-white border border-gray-200 rounded-2xl p-8 shadow transition hover:shadow-lg flex flex-col" data-aos="fade-up" data-aos-delay="300">
+        <div class="flex items-center mb-4">
+          <img src="https://i.pravatar.cc/100?img=5" alt="Nevada Herbertson" class="w-12 h-12 rounded-full border border-gray-200 object-cover mr-4">
+          <span class="font-bold uppercase text-gray-700 text-base">Nevada Herbertson.</span>
+        </div>
+        <p class="text-gray-600 text-base leading-relaxed">
+          <span class="text-lg leading-none italic font-bold text-gray-400 mr-1">"</span>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, voluptatem porro obcaecati dicta, quibusdam sunt ipsum, laboriosam nostrum facere exercitationem pariatur deserunt tempora molestiae assumenda nesciunt alias eius? Illo, autem!
+          <span class="text-lg leading-none italic font-bold text-gray-400 ml-1">"</span>
+        </p>
+      </div>
+      <!-- Testimonial 4 -->
+      <div class="bg-white border border-gray-200 rounded-2xl p-8 shadow transition hover:shadow-lg flex flex-col" data-aos="fade-up" data-aos-delay="400">
+        <div class="flex items-center mb-4">
+          <img src="https://i.pravatar.cc/100?img=2" alt="Stevie Tifft" class="w-12 h-12 rounded-full border border-gray-200 object-cover mr-4">
+          <span class="font-bold uppercase text-gray-700 text-base">Stevie Tifft.</span>
+        </div>
+        <p class="text-gray-600 text-base leading-relaxed">
+          <span class="text-lg leading-none italic font-bold text-gray-400 mr-1">"</span>
+          Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Dolore quod necessitatibus, labore sapiente, est, dignissimos ullam error ipsam sint quam tempora vel.
+          <span class="text-lg leading-none italic font-bold text-gray-400 ml-1">"</span>
+        </p>
+      </div>
+      <!-- Testimonial 5 -->
+      <div class="bg-white border border-gray-200 rounded-2xl p-8 shadow transition hover:shadow-lg flex flex-col" data-aos="fade-up" data-aos-delay="500">
+        <div class="flex items-center mb-4">
+          <img src="https://i.pravatar.cc/100?img=4" alt="Charlie Howse" class="w-12 h-12 rounded-full border border-gray-200 object-cover mr-4">
+          <span class="font-bold uppercase text-gray-700 text-base">Charlie Howse.</span>
+        </div>
+        <p class="text-gray-600 text-base leading-relaxed">
+          <span class="text-lg leading-none italic font-bold text-gray-400 mr-1">"</span>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto inventore voluptatum nostrum atque, corrupti, vitae esse id accusamus dignissimos neque reprehenderit natus, hic sequi itaque dicta nisi voluptatem! Culpa, iusto.
+          <span class="text-lg leading-none italic font-bold text-gray-400 ml-1">"</span>
+        </p>
+      </div>
+      <!-- Testimonial 6 -->
+      <div class="bg-white border border-gray-200 rounded-2xl p-8 shadow transition hover:shadow-lg flex flex-col" data-aos="fade-up" data-aos-delay="600">
+        <div class="flex items-center mb-4">
+          <img src="https://i.pravatar.cc/100?img=6" alt="Kris Stanton" class="w-12 h-12 rounded-full border border-gray-200 object-cover mr-4">
+          <span class="font-bold uppercase text-gray-700 text-base">Kris Stanton.</span>
+        </div>
+        <p class="text-gray-600 text-base leading-relaxed">
+          <span class="text-lg leading-none italic font-bold text-gray-400 mr-1">"</span>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem iusto, explicabo, cupiditate quas totam!
+          <span class="text-lg leading-none italic font-bold text-gray-400 ml-1">"</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Waitlist Form Section -->
+  <section id="waitlist" class="scroll-mt-24 bg-gradient-to-br from-blue-50 via-white to-blue-100 py-20 md:py-28 relative overflow-hidden font-inter">
+  <!-- Decorative SVGs -->
+  <svg class="absolute top-0 left-0 w-40 h-40 md:w-64 md:h-64 opacity-10 text-blue-200 pointer-events-none" fill="currentColor" viewBox="0 0 400 400">
+    <circle cx="200" cy="200" r="200"/>
+  </svg>
+  <svg class="absolute bottom-0 right-0 w-44 h-44 md:w-72 md:h-72 opacity-10 text-indigo-200 pointer-events-none" fill="currentColor" viewBox="0 0 400 400">
+    <rect width="400" height="400" rx="200"/>
+  </svg>
+  <div class="container mx-auto px-6 md:px-12 relative z-10">
+    <div class="flex flex-col-reverse md:flex-row items-center gap-10 md:gap-20">
+      <!-- Left: Waitlist Form -->
+      <div class="w-full md:w-1/2" data-aos="fade-right" data-aos-delay="100">
+        <h2 class="text-3xl md:text-5xl font-extrabold text-blue-700 mb-4" data-aos="fade-down" data-aos-delay="0">
+          Join Our Waitlist
+        </h2>
+        <p class="mx-auto mb-8 max-w-xl text-lg text-gray-600" data-aos="fade-up" data-aos-delay="150">
+          Be the first to experience the future of accommodation. Sign up and get notified when we launch!
+        </p>
+        <form action="https://formspree.io/f/your-form-id" method="POST" class="mx-auto mt-6 max-w-md space-y-4 rounded-2xl bg-white/80 p-8 shadow-2xl border border-blue-100" data-aos="fade-right" data-aos-delay="200">
+          <input type="email" name="email" placeholder="Your Email" required class="w-full rounded-lg border px-4 py-3 focus:ring-2 focus:ring-blue-400 focus:outline-none" />
+          <select name="role" required class="w-full rounded-lg border px-4 py-3 focus:ring-2 focus:ring-blue-400 focus:outline-none">
+            <option value="" disabled selected>Select Your Role</option>
+            <option value="tenant">Tenant</option>
+            <option value="owner">Owner</option>
+            <option value="hr">HR</option>
+          </select>
+          <button type="submit" class="w-full rounded-lg bg-blue-600 px-6 py-3 text-lg font-semibold text-white transition duration-200 hover:bg-blue-700 shadow">
+            Submit
+          </button>
+        </form>
+      </div>
+      <!-- Right: Waitlist Image -->
+      <div class="w-full md:w-1/2 flex justify-center items-center mb-10 md:mb-0" data-aos="fade-left" data-aos-delay="200">
+        <div class="relative w-full max-w-xs sm:max-w-sm md:max-w-md">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80"
+            alt="Happy people waiting"
+            class="rounded-2xl md:rounded-3xl shadow-2xl border-4 border-white object-cover w-full max-w-full"
+            style="min-height:220px;"
+          />
+          <!-- Decorative floating SVG -->
+          <svg class="absolute -top-6 -right-6 w-10 h-10 sm:w-16 sm:h-16 opacity-20 text-blue-400 pointer-events-none" fill="currentColor" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="50"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="scroll-mt-24 bg-gradient-to-br from-blue-50 via-white to-blue-100 py-20 md:py-28 relative overflow-hidden font-inter">
+  <!-- Decorative SVGs -->
+  <svg class="absolute top-0 left-0 w-40 h-40 md:w-64 md:h-64 opacity-10 text-blue-200 pointer-events-none" fill="currentColor" viewBox="0 0 400 400">
+    <circle cx="200" cy="200" r="200"/>
+  </svg>
+  <svg class="absolute bottom-0 right-0 w-44 h-44 md:w-72 md:h-72 opacity-10 text-indigo-200 pointer-events-none" fill="currentColor" viewBox="0 0 400 400">
+    <rect width="400" height="400" rx="200"/>
+  </svg>
+  <div class="container mx-auto px-6 md:px-12 relative z-10">
+    <div class="flex flex-col md:flex-row items-center gap-12 md:gap-20">
+      <!-- Left: Contact Image -->
+      <div class="w-full md:w-1/2 flex justify-center items-center mb-10 md:mb-0" data-aos="fade-right" data-aos-delay="100">
+        <div class="relative w-full max-w-xs sm:max-w-sm md:max-w-md">
+          <img
+            src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?auto=format&fit=crop&w=600&q=80"
+            alt="Contact Support Team"
+            class="rounded-2xl md:rounded-3xl shadow-2xl border-4 border-white object-cover w-full max-w-full"
+            style="min-height:220px;"
+          />
+          <!-- Decorative floating SVG -->
+          <svg class="absolute -top-6 -right-6 w-10 h-10 sm:w-16 sm:h-16 opacity-20 text-blue-400 pointer-events-none" fill="currentColor" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="50"/>
+          </svg>
+        </div>
+      </div>
+      <!-- Right: Contact Info -->
+      <div class="w-full md:w-1/2 text-left" data-aos="fade-left" data-aos-delay="200">
+        <h2 class="text-3xl md:text-5xl font-extrabold text-blue-700 mb-4" data-aos="fade-down" data-aos-delay="0">
+          Contact Us
+        </h2>
+        <p class="mb-8 max-w-xl text-lg text-gray-600" data-aos="fade-up" data-aos-delay="100">
+          Have questions or need support? Reach out to our team.
+        </p>
+        <div class="space-y-4 text-lg">
+          <p class="flex items-center gap-3" data-aos="fade-right" data-aos-delay="200">
+            <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16 12H8m8 0a4 4 0 11-8 0 4 4 0 018 0z"/>
+              </svg>
+            </span>
+            <span>
+              <span class="font-semibold text-blue-700">Email:</span>
+              <a href="mailto:support@homivo.in" class="text-blue-600 hover:underline">support@homivo.in</a>
+            </span>
+          </p>
+          <p class="flex items-center gap-3" data-aos="fade-right" data-aos-delay="250">
+            <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 5h18M3 19h18M4 5v14m16-14v14"/>
+              </svg>
+            </span>
+            <span>
+              <span class="font-semibold text-blue-700">Phone:</span> +91-99999-99999
+            </span>
+          </p>
+          <p class="flex items-center gap-3" data-aos="fade-right" data-aos-delay="300">
+            <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2h5"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+            </span>
+            <span>
+              <span class="font-semibold text-blue-700">Address:</span> 123, Homivo Lane, Bengaluru, India
+            </span>
+          </p>
+        </div>
+        <a href="mailto:support@homivo.in" class="inline-block mt-10 px-6 py-3 rounded-lg bg-blue-600 text-white font-semibold text-lg shadow-lg transition hover:bg-blue-700" data-aos="fade-up" data-aos-delay="400">
+          Email Support
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Footer -->
+<footer class="scroll-mt-24 bg-gradient-to-br from-blue-50 via-white to-blue-100 py-10 md:py-14 border-t font-inter">
+  <div class="container mx-auto px-6 md:px-12">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+      <!-- Left: Logo & Info -->
+      <div class="text-center md:text-left">
+        <span class="logo-text text-2xl md:text-3xl">Homivo<span class="logo-dot"></span></span>
+        <p class="text-gray-600 mt-2">© 2025 Homivo Technology Pvt. Ltd. All rights reserved.</p>
+      </div>
+      <!-- Center: Links -->
+      <div class="flex flex-wrap items-center justify-center gap-4 mt-4 md:mt-0">
+        <a href="#" class="text-blue-600 hover:underline text-sm font-medium">Privacy Policy</a>
+        <span class="text-gray-400">|</span>
+        <a href="#" class="text-blue-600 hover:underline text-sm font-medium">Terms of Service</a>
+      </div>
+      <!-- Right: Social Icons -->
+      <div class="flex gap-4 mt-4 md:mt-0">
+        <a href="#" class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center hover:bg-blue-200 transition" aria-label="Twitter">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.47.69a4.3 4.3 0 001.88-2.37 8.59 8.59 0 01-2.72 1.04A4.28 4.28 0 0016.11 4c-2.37 0-4.29 1.92-4.29 4.29 0 .34.04.67.11.99C7.69 9.13 4.07 7.38 1.64 4.7c-.37.64-.58 1.38-.58 2.17 0 1.5.76 2.82 1.92 3.6a4.25 4.25 0 01-1.94-.54v.05c0 2.1 1.5 3.85 3.5 4.25-.36.1-.74.16-1.13.16-.28 0-.54-.03-.8-.08.54 1.68 2.12 2.9 3.99 2.93A8.6 8.6 0 012 19.54a12.13 12.13 0 006.56 1.92c7.88 0 12.2-6.53 12.2-12.2 0-.19 0-.39-.01-.58A8.7 8.7 0 0024 4.59a8.5 8.5 0 01-2.54.7z"/></svg>
+        </a>
+        <a href="#" class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center hover:bg-blue-200 transition" aria-label="LinkedIn">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0zM7.12 20.45H3.56V9h3.56v11.45zM5.34 7.67a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zm15.11 12.78h-3.56v-5.6c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.95v5.69h-3.56V9h3.42v1.56h.05c.48-.91 1.65-1.85 3.39-1.85 3.63 0 4.3 2.39 4.3 5.5v6.24z"/></svg>
+        </a>
+        <a href="#" class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center hover:bg-blue-200 transition" aria-label="Facebook">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.04c-5.5 0-9.96 4.46-9.96 9.96 0 4.41 3.6 8.06 8.24 8.93v-6.32h-2.48v-2.61h2.48V9.41c0-2.45 1.49-3.8 3.77-3.8 1.09 0 2.23.2 2.23.2v2.45h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.61h-2.34v6.32c4.64-.87 8.24-4.52 8.24-8.93 0-5.5-4.46-9.96-9.96-9.96z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <script>
+      // Mobile menu toggle
+      const menuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const closeBtn = document.getElementById('close-mobile-menu');
+      menuBtn.onclick = () => mobileMenu.classList.remove('hidden');
+      closeBtn.onclick = () => mobileMenu.classList.add('hidden');
+      window.closeMobileMenu = () => mobileMenu.classList.add('hidden');
+      // Close menu on nav click
+      document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+      });
+    </script>
+  </body>
+</html>
