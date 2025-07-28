@@ -1,39 +1,61 @@
-# React + Vite Template
+# Shadcn-UI Template Usage Instructions
 
-A modern React template for web applications and games, featuring React 18, Vite, TailwindCSS, and Material UI.
+## technology stack
 
-## Project Structure
+This project is built with:
 
-```
-├── src/
-│   ├── App.jsx          # Main application component
-│   ├── main.jsx         # Application entry point
-│   └── index.css        # Global styles (Tailwind)
-├── public/              # Static assets
-├── index.html           # HTML template
-├── vite.config.js       # Vite configuration
-├── tailwind.config.js   # Tailwind configuration
-├── postcss.config.js    # PostCSS configuration
-└── eslint.config.js     # ESLint configuration
-```
-
-## Development Guidelines
-
-- Modify `index.html` and `src/App.jsx` as needed
-- Create new folders or files in `src/` directory as needed
-- Style components using TailwindCSS utility classes
-- Avoid modifying `src/main.jsx` and `src/index.css`
-- Only modify `vite.config.js` if absolutely necessary
-
-## Available Scripts
-- `pnpm install` - Install dependencies
-- `pnpm run dev` - Start development server
-- `pnpm run lint` - Lint source files
-
-## Tech Stack
-
-- React
 - Vite
-- TailwindCSS
-- ESLint
-- Javascript
+- TypeScript
+- React
+- shadcn-ui
+- Tailwind CSS
+
+All shadcn/ui components have been downloaded under `@/components/ui`.
+
+## File Structure
+
+- `index.html` - HTML entry point
+- `vite.config.ts` - Vite configuration file
+- `tailwind.config.js` - Tailwind CSS configuration file
+- `package.json` - NPM dependencies and scripts
+- `src/app.tsx` - Root component of the project
+- `src/main.tsx` - Project entry point
+- `src/index.css` - Existing CSS configuration
+
+## Components
+
+- All shadcn/ui components are pre-downloaded and available at `@/components/ui`
+
+## Styling
+
+- Add global styles to `src/index.css` or create new CSS files as needed
+- Use Tailwind classes for styling components
+
+## Development
+
+- Import components from `@/components/ui` in your React components
+- Customize the UI by modifying the Tailwind configuration
+
+## Note
+
+The `@/` path alias points to the `src/` directory
+
+# Commands
+
+**Install Dependencies**
+
+```shell
+pnpm i
+```
+
+**Start Preview**
+
+```shell
+pnpm run dev
+```
+
+**To build**
+
+```shell
+pnpm run build
+```
