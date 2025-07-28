@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Create Account | Homivo</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 via-white to-blue-100 min-h-screen flex items-center justify-center px-4 py-10">
+
+  <div class="max-w-7xl w-full bg-white shadow-xl rounded-3xl grid md:grid-cols-2 overflow-hidden border border-blue-100">
+
+    <!-- LEFT PANEL -->
+    <div class="hidden md:flex flex-col justify-center bg-gradient-to-br from-blue-600 to-indigo-700 text-white px-10 py-12">
+      <h2 class="text-4xl font-bold mb-10 leading-snug">Why Join <span class="text-yellow-300">Homivo</span>?</h2>
+
+      <ul class="space-y-6 text-blue-100 text-base">
+        <li class="flex items-start gap-4">
+          <!-- Home icon SVG -->
+          <svg class="w-6 h-6 flex-shrink-0 bg-white text-blue-700 p-1 rounded-full" fill="currentColor" viewBox="0 0 20 20"><path d="M10.707 1.293a1 1 0 00-1.414 0l-8 8A1 1 0 002 10h1v6a2 2 0 002 2h3a1 1 0 001-1v-4h2v4a1 1 0 001 1h3a2 2 0 002-2v-6h1a1 1 0 00.707-1.707l-8-8z"/></svg>
+          Manage accommodations from listing to booking seamlessly.
+        </li>
+        <li class="flex items-start gap-4">
+          <!-- Lock icon SVG -->
+          <svg class="w-6 h-6 flex-shrink-0 bg-white text-blue-700 p-1 rounded-full" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 8V6a5 5 0 0110 0v2h1a2 2 0 012 2v7a2 2 0 01-2 2H4a2 2 0 01-2-2v-7a2 2 0 012-2h1zm2-2a3 3 0 016 0v2H7V6z" clip-rule="evenodd"/></svg>
+          Secure platform with KYC, payment gateways, and RBAC access.
+        </li>
+        <li class="flex items-start gap-4">
+          <!-- Chart icon SVG -->
+          <svg class="w-6 h-6 flex-shrink-0 bg-white text-blue-700 p-1 rounded-full" fill="currentColor" viewBox="0 0 20 20"><path d="M2 11a1 1 0 112 0v5a1 1 0 11-2 0v-5zm5-4a1 1 0 112 0v9a1 1 0 11-2 0V7zm5 2a1 1 0 112 0v7a1 1 0 11-2 0V9zm5-6a1 1 0 112 0v13a1 1 0 11-2 0V3z"/></svg>
+          Access powerful analytics for users, properties, and revenue.
+        </li>
+      </ul>
+    </div>
+
+    <!-- RIGHT FORM PANEL -->
+    <div class="p-8 sm:p-12 bg-white w-full">
+      <h2 class="text-3xl font-extrabold text-blue-700 mb-2">Create your Homivo Account</h2>
+      <p class="text-sm text-gray-500 mb-6">Join as a tenant, property owner, or HR partner and simplify your accommodation journey.</p>
+
+      <form action="#" method="POST" class="space-y-4">
+        <input type="text" placeholder="Full Name" class="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm focus:ring-2 focus:ring-blue-500"/>
+        <input type="email" placeholder="Email Address" class="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm focus:ring-2 focus:ring-blue-500"/>
+        <input type="tel" placeholder="Mobile Number" class="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm focus:ring-2 focus:ring-blue-500"/>
+
+        <select class="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm focus:ring-2 focus:ring-blue-500">
+          <option disabled selected>Select Your Role</option>
+          <option value="tenant">Tenant</option>
+          <option value="owner">Property Owner</option>
+          <option value="hr">HR / Company</option>
+        </select>
+
+        <input type="text" placeholder="Location (City or Area)" class="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm focus:ring-2 focus:ring-blue-500"/>
+
+        <label class="flex items-start gap-2 text-sm text-gray-600">
+          <input type="checkbox" required class="mt-1 text-blue-600 focus:ring-2 focus:ring-blue-400">
+          I agree to the 
+          <a href="#" class="text-blue-600 hover:underline">Terms</a> and 
+          <a href="#" class="text-blue-600 hover:underline">Privacy Policy</a>
+        </label>
+
+        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition-all shadow-md">
+          Create Account
+        </button>
+      </form>
+
+      <!-- Divider -->
+      <div class="my-6 text-center text-sm text-gray-400">or</div>
+
+      <!-- Social Logins -->
+      <div class="space-y-3">
+        <button class="w-full flex items-center justify-center gap-3 border border-gray-300 rounded-lg py-2.5 text-sm font-medium hover:shadow-sm transition">
+          <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" class="w-5 h-5"/>
+          Sign up with Google
+        </button>
+        <button class="w-full flex items-center justify-center gap-3 border border-gray-300 rounded-lg py-2.5 text-sm font-medium hover:shadow-sm transition">
+          <img src="https://www.svgrepo.com/show/448239/apple.svg" alt="Apple" class="w-5 h-5"/>
+          Sign up with Apple
+        </button>
+      </div>
+
+      <!-- Login Link -->
+      <p class="text-center text-sm text-gray-500 mt-6">
+        Already have an account? <a href="/login" class="text-blue-600 hover:underline font-medium">Login here</a>
+      </p>
+    </div>
+  </div>
+
+</body>
+</html>

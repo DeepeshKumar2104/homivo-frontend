@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Multi-Step Signup | Homivo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .hidden-step { display: none; }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 via-white to-blue-100 min-h-screen flex items-center justify-center px-4 py-10">
+
+  <div class="w-full max-w-xl bg-white shadow-xl rounded-2xl p-8 space-y-6">
+    <h2 class="text-2xl font-bold text-blue-700">Create your Homivo Account</h2>
+
+    <!-- Step 1: User Info -->
+    <form id="step1" class="step">
+      <div class="space-y-4">
+        <input type="text" placeholder="Full Name *" required class="w-full border border-gray-300 px-4 py-3 rounded-md focus:ring-2 focus:ring-blue-500"/>
+        <input type="email" placeholder="Email Address *" required class="w-full border border-gray-300 px-4 py-3 rounded-md focus:ring-2 focus:ring-blue-500"/>
+        <input type="tel" placeholder="Phone Number *" required class="w-full border border-gray-300 px-4 py-3 rounded-md focus:ring-2 focus:ring-blue-500"/>
+        <input type="password" placeholder="Password *" required class="w-full border border-gray-300 px-4 py-3 rounded-md focus:ring-2 focus:ring-blue-500"/>
+      </div>
+      <div class="flex justify-end mt-6">
+        <button type="button" onclick="nextStep(1)" class="text-blue-600 font-semibold flex items-center gap-2">
+          Next →
+        </button>
+      </div>
+    </form>
+
+    <!-- Step 2: Address Info -->
+    <form id="step2" class="step hidden-step">
+      <div class="space-y-4">
+        <input type="text" placeholder="Address Line 1 *" required class="w-full border border-gray-300 px-4 py-3 rounded-md focus:ring-2 focus:ring-blue-500"/>
+        <input type="text" placeholder="City *" required class="w-full border border-gray-300 px-4 py-3 rounded-md focus:ring-2 focus:ring-blue-500"/>
+        <input type="text" placeholder="State *" required class="w-full border border-gray-300 px-4 py-3 rounded-md focus:ring-2 focus:ring-blue-500"/>
+        <input type="text" placeholder="Postal Code *" required class="w-full border border-gray-300 px-4 py-3 rounded-md focus:ring-2 focus:ring-blue-500"/>
+      </div>
+      <div class="flex justify-between mt-6">
+        <button type="button" onclick="prevStep(1)" class="text-blue-600 font-semibold flex items-center gap-2">
+          ← Back
+        </button>
+        <button type="button" onclick="nextStep(2)" class="text-blue-600 font-semibold flex items-center gap-2">
+          Next →
+        </button>
+      </div>
+    </form>
+
+    <!-- Step 3: Role & Consent -->
+    <form id="step3" class="step hidden-step">
+      <div class="space-y-4">
+        <select required class="w-full border border-gray-300 px-4 py-3 rounded-md focus:ring-2 focus:ring-blue-500">
+          <option disabled selected>Select Your Role *</option>
+          <option value="tenant">Tenant</option>
+          <option value="owner">Property Owner</option>
+          <option value="hr">HR / Company</option>
+        </select>
+
+        <label class="flex items-start gap-2 text-sm text-gray-700 mt-4">
+          <input type="checkbox" required class="mt-1 text-blue-600 focus:ring-2 focus:ring-blue-400">
+          I agree to the <a href="#" class="text-blue-600 hover:underline">Terms</a> and <a href="#" class="text-blue-600 hover:underline">Privacy Policy</a>.
+        </label>
+      </div>
+
+      <div class="flex justify-between mt-6">
+        <button type="button" onclick="prevStep(2)" class="text-blue-600 font-semibold flex items-center gap-2">
+          ← Back
+        </button>
+        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-md shadow-sm transition">
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    function nextStep(current) {
+      document.getElementById(`step${current}`).classList.add('hidden-step');
+      document.getElementById(`step${current + 1}`).classList.remove('hidden-step');
+    }
+
+    function prevStep(current) {
+      document.getElementById(`step${current}`).classList.add('hidden-step');
+      document.getElementById(`step${current - 1}`).classList.remove('hidden-step');
+    }
+  </script>
+</body>
+</html>
