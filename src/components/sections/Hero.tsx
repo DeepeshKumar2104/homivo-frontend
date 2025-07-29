@@ -82,87 +82,80 @@ export default function Hero() {
           
           {/* Right Column - Search Card */}
           <div className="flex-1 w-full max-w-md lg:max-w-lg">
-            <Card className="shadow-xl bg-white/95 backdrop-blur border-2 border-primary/10">
-              <CardContent className="pt-6">
-                <h2 className="text-3xl font-bold text-center mb-6 text-primary">Find Your New Home</h2>
-                
-                <div className="space-y-6">
-                  <div>
-                    <label className="block text-sm font-medium mb-2 text-gray-700">Location</label>
-                    <Input 
-                      placeholder="City, Area or Landmark" 
-                      className="h-12 text-base border-2 focus:ring-2 focus:ring-primary/30"
-                    />
-                  </div>
-                  
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-sm font-medium mb-2 text-gray-700">Property Type</label>
-                      <Select value={propertyType} onValueChange={setPropertyType}>
-                        <SelectTrigger className="h-12 border-2 focus:ring-2 focus:ring-primary/30">
-                          <SelectValue placeholder="Any Type" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="any">Any Type</SelectItem>
-                          <SelectItem value="apartment">Apartment</SelectItem>
-                          <SelectItem value="pg">PG</SelectItem>
-                          <SelectItem value="hostel">Hostel</SelectItem>
-                          <SelectItem value="coliving">Co-living</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium mb-2 text-gray-700">Budget</label>
-                      <Select defaultValue="any">
-                        <SelectTrigger className="h-12 border-2 focus:ring-2 focus:ring-primary/30">
-                          <SelectValue placeholder="Any Budget" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="any">Any Budget</SelectItem>
-                          <SelectItem value="low">Under ₹10,000</SelectItem>
-                          <SelectItem value="mid">₹10,000 - ₹20,000</SelectItem>
-                          <SelectItem value="high">Above ₹20,000</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <label className="block text-sm font-medium mb-2 text-gray-700">Amenities</label>
-                    <div className="flex flex-wrap gap-2">
-                      {['WiFi', 'AC', 'Furnished', 'Food', 'Security'].map((amenity, index) => (
-                        <Button 
-                          key={index} 
-                          variant="outline" 
-                          size="sm" 
-                          className="rounded-full bg-gray-50 hover:bg-primary/10 hover:text-primary border-gray-200"
-                        >
-                          {amenity}
-                        </Button>
-                      ))}
-                    </div>
-                  </div>
-                  
-                  <Button className="w-full mt-4 h-12 text-base font-semibold" size="lg">
-                    <i className="fas fa-search mr-2"></i>
-                    Search Properties
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-            
-            <div className="mt-6 text-center">
-              <p className="text-white text-base font-medium mb-2">Trusted by students, working professionals & families</p>
-              {/* <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-2 border-white text-white hover:bg-white hover:text-primary bg-transparent transition-colors w-full mt-2"
-              >
-                <i className="fas fa-home mr-2"></i>
-                List Your Property
-              </Button> */}
-            </div>
+  <Card className="shadow-2xl bg-white/95 backdrop-blur border-2 border-primary/10 rounded-3xl">
+    <CardContent className="pt-8 pb-6 px-4 sm:px-8">
+      <h2 className="text-3xl font-extrabold text-center mb-8 text-primary tracking-tight drop-shadow-sm">
+        <span className="inline-block bg-gradient-to-r from-primary to-yellow-400 text-transparent bg-clip-text">Find Your New Home</span>
+      </h2>
+      <form className="space-y-5">
+        {/* Location */}
+        <div>
+          <label className="block text-sm font-semibold mb-2 text-gray-700">Location</label>
+          <Input
+            placeholder="City, Area or Landmark"
+            className="h-12 text-base border-2 focus:ring-2 focus:ring-primary/30 rounded-xl px-4"
+          />
+        </div>
+        {/* Property Type & Budget */}
+        <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex-1">
+            <label className="block text-sm font-semibold mb-2 text-gray-700">Property Type</label>
+            <Select value={propertyType} onValueChange={setPropertyType}>
+              <SelectTrigger className="h-12 border-2 focus:ring-2 focus:ring-primary/30 rounded-xl px-4 w-full">
+                <SelectValue placeholder="Any Type" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="any">Any Type</SelectItem>
+                <SelectItem value="apartment">Apartment</SelectItem>
+                <SelectItem value="pg">PG</SelectItem>
+                <SelectItem value="hostel">Hostel</SelectItem>
+                <SelectItem value="coliving">Co-living</SelectItem>
+              </SelectContent>
+            </Select>
           </div>
+          <div className="flex-1">
+            <label className="block text-sm font-semibold mb-2 text-gray-700">Budget</label>
+            <Select defaultValue="any">
+              <SelectTrigger className="h-12 border-2 focus:ring-2 focus:ring-primary/30 rounded-xl px-4 w-full">
+                <SelectValue placeholder="Any Budget" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="any">Any Budget</SelectItem>
+                <SelectItem value="low">Under ₹10,000</SelectItem>
+                <SelectItem value="mid">₹10,000 - ₹20,000</SelectItem>
+                <SelectItem value="high">Above ₹20,000</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+        </div>
+        {/* Amenities */}
+        <div>
+          <label className="block text-sm font-semibold mb-2 text-gray-700">Amenities</label>
+          <div className="flex flex-wrap gap-2">
+            {['WiFi', 'AC', 'Furnished', 'Food', 'Security'].map((amenity, index) => (
+              <Button
+                key={index}
+                variant="outline"
+                size="sm"
+                className="rounded-full bg-gray-50 hover:bg-primary/10 hover:text-primary border-gray-200 px-4 py-2 text-xs font-medium transition-all"
+              >
+                {amenity}
+              </Button>
+            ))}
+          </div>
+        </div>
+        {/* Search Button */}
+        <Button className="w-full mt-2 h-12 text-base font-bold rounded-xl bg-gradient-to-r from-primary to-yellow-400 text-white shadow-lg hover:from-primary/90 hover:to-yellow-400/90 transition-all" size="lg">
+          <i className="fas fa-search mr-2"></i>
+          Search Properties
+        </Button>
+      </form>
+    </CardContent>
+  </Card>
+  <div className="mt-6 text-center">
+    <p className="text-white text-base font-medium mb-2">Trusted by students, working professionals & families</p>
+  </div>
+</div>
         </div>
       </div>
       
