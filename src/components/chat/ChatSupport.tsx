@@ -207,13 +207,20 @@ export default function ChatSupport() {
                         {messages.map((message) => (
                           <div
                             key={message.id}
-                            className={`flex ${message.isUser ? "justify-end" : "justify-start"}`}
+                            className={`flex ${message.isUser ? "justify-end" : "justify-start"} items-end`}
                           >
+                            {!message.isUser && (
+                              <span className="mr-2 flex-shrink-0 flex items-end">
+                                <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-gradient-to-br from-primary to-indigo-800 shadow">
+                                  <MessageCircle className="w-4 h-4 text-white" />
+                                </span>
+                              </span>
+                            )}
                             <div
-                              className={`max-w-[80%] rounded-2xl px-4 py-2 shadow-sm ${
+                              className={`max-w-[80%] rounded-2xl px-4 py-2 shadow ${
                                 message.isUser
                                   ? "bg-gradient-to-br from-primary to-indigo-800 text-white"
-                                  : "bg-white/90 text-gray-900 border border-primary/10"
+                                  : "bg-gradient-to-br from-white to-gray-100 border border-primary/10 text-gray-900"
                               }`}
                             >
                               <p className="text-sm whitespace-pre-line">{message.text}</p>
@@ -240,7 +247,7 @@ export default function ChatSupport() {
                     </ScrollArea>
                   </div>
                   {/* Input Bar */}
-                  <div className="sticky bottom-0 left-0 w-full  px-3 py-3 border-t border-primary/10 z-10">
+                  <div className="sticky bottom-0 left-0 w-full bg-white px-3 py-3 border-t border-primary/10 z-10">
                     <div className="flex gap-2 items-center">
                       <Input
                         ref={inputRef}
