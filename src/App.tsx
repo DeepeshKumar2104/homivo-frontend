@@ -11,6 +11,9 @@ import NotFound from './pages/NotFound';
 // Auth Components (these will be implemented later when authentication is needed)
 import AuthModal from './components/auth/AuthModal';
 
+// Chat Support Component
+import ChatSupport from './components/chat/ChatSupport';
+
 const queryClient = new QueryClient();
 
 const App = () => {
@@ -57,6 +60,9 @@ const App = () => {
               mode={authMode}
             />
           )}
+          
+          {/* Chat Support - Available on all pages */}
+          <ChatSupport />
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>
