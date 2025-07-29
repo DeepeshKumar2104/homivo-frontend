@@ -128,8 +128,8 @@ export default function ChatSupport() {
 
       {/* Chat Modal */}
       {isOpen && (
-        <div className="fixed right-4 bottom-24 sm:bottom-8 z-50 flex items-end justify-end">
-          <Card className="w-[95vw] max-w-[420px] h-[70vh] max-h-[600px] flex flex-col rounded-3xl shadow-2xl bg-white/95 border border-primary/10 backdrop-blur-lg relative">
+        <div className="fixed inset-0 z-50 flex items-end justify-center sm:items-end sm:justify-end bg-black/30">
+          <Card className="w-full max-w-full sm:max-w-[420px] h-[90dvh] sm:h-[70vh] max-h-[90dvh] sm:max-h-[600px] flex flex-col rounded-t-3xl sm:rounded-3xl rounded-b-none sm:rounded-b-3xl shadow-2xl bg-white/95 border border-primary/10 backdrop-blur-lg relative m-0 sm:mr-4 sm:mb-24">
             {/* Header */}
             <CardHeader className="sticky top-0 z-10 bg-transparent flex flex-row items-center justify-between px-6 py-4 border-b-0">
               <div className="flex items-center gap-2">
@@ -163,7 +163,7 @@ export default function ChatSupport() {
             </CardHeader>
 
             {/* Content */}
-            <CardContent className="flex-1 flex flex-col p-0">
+            <CardContent className="flex-1 flex flex-col p-0 min-h-0">
               {/* Email Step */}
               {step === "email" && (
                 <div className="flex flex-col items-center justify-center h-full px-6 py-10 gap-6">
@@ -201,66 +201,67 @@ export default function ChatSupport() {
               {/* Chat Step */}
               {step === "chat" && (
                 <>
-                  <ScrollArea className="flex-1 px-4 py-2">
-                    <div className="space-y-4 pb-4">
-                      {messages.map((message) => (
-                        <div
-                          key={message.id}
-                          className={`flex ${message.isUser ? "justify-end" : "justify-start"}`}
-                        >
+                  <div className="flex-1 min-h-0">
+                    <ScrollArea className="h-full max-h-[60dvh] sm:max-h-[420px] px-4 py-2">
+                      <div className="space-y-4 pb-4">
+                        {messages.map((message) => (
                           <div
-                            className={`max-w-[80%] rounded-2xl px-4 py-2 shadow-sm ${
-                              message.isUser
-                                ? "bg-gradient-to-br from-primary to-indigo-800 text-white"
-                                : "bg-white/90 text-gray-900 border border-primary/10"
-                            }`}
+                            key={message.id}
+                            className={`flex ${message.isUser ? "justify-end" : "justify-start"}`}
                           >
-                            <p className="text-sm whitespace-pre-line">{message.text}</p>
-                            <p className="text-xs opacity-60 mt-1 text-right">
-                              {message.timestamp.toLocaleTimeString([], {
-                                hour: "2-digit",
-                                minute: "2-digit",
-                              })}
-                            </p>
+                            <div
+                              className={`max-w-[80%] rounded-2xl px-4 py-2 shadow-sm ${
+                                message.isUser
+                                  ? "bg-gradient-to-br from-primary to-indigo-800 text-white"
+                                  : "bg-white/90 text-gray-900 border border-primary/10"
+                              }`}
+                            >
+                              <p className="text-sm whitespace-pre-line">{message.text}</p>
+                              <p className="text-xs opacity-60 mt-1 text-right">
+                                {message.timestamp.toLocaleTimeString([], {
+                                  hour: "2-digit",
+                                  minute: "2-digit",
+                                })}
+                              </p>
+                            </div>
                           </div>
-                        </div>
-                      ))}
-                      {isLoading && (
-                        <div className="flex justify-start">
-                          <div className="bg-white/90 border border-primary/10 rounded-2xl px-4 py-2 flex items-center gap-1">
-                            <div className="w-2 h-2 bg-primary/60 rounded-full animate-bounce"></div>
-                            <div className="w-2 h-2 bg-primary/60 rounded-full animate-bounce" style={{ animationDelay: "0.1s" }}></div>
-                            <div className="w-2 h-2 bg-primary/60 rounded-full animate-bounce" style={{ animationDelay: "0.2s" }}></div>
+                        ))}
+                        {isLoading && (
+                          <div className="flex justify-start">
+                            <div className="bg-white/90 border border-primary/10 rounded-2xl px-4 py-2 flex items-center gap-1">
+                              <div className="w-2 h-2 bg-primary/60 rounded-full animate-bounce"></div>
+                              <div className="w-2 h-2 bg-primary/60 rounded-full animate-bounce" style={{ animationDelay: "0.1s" }}></div>
+                              <div className="w-2 h-2 bg-primary/60 rounded-full animate-bounce" style={{ animationDelay: "0.2s" }}></div>
+                            </div>
                           </div>
-                        </div>
-                      )}
-                      <div ref={messagesEndRef} />
+                        )}
+                        <div ref={messagesEndRef} />
+                      </div>
+                    </ScrollArea>
+                  </div>
+                  {/* Input Bar */}
+                  <div className="sticky bottom-0 left-0 w-full  px-3 py-3 border-t border-primary/10 z-10">
+                    <div className="flex gap-2 items-center">
+                      <Input
+                        ref={inputRef}
+                        value={inputValue}
+                        onChange={(e) => setInputValue(e.target.value)}
+                        onKeyPress={handleKeyPress}
+                        placeholder="Type your message..."
+                        disabled={isLoading}
+                        className="flex-1 h-12 rounded-full bg-white shadow-sm border border-gray-200 focus:ring-2 focus:ring-primary/30 text-base px-4"
+                        style={{ minWidth: 0 }}
+                      />
+                      <Button
+                        onClick={handleSendMessage}
+                        disabled={!inputValue.trim() || isLoading}
+                        size="icon"
+                        className="h-12 w-12 rounded-full bg-gradient-to-br from-primary to-indigo-800 text-white shadow-lg flex items-center justify-center"
+                      >
+                        <Send className="h-5 w-5" />
+                      </Button>
                     </div>
-                  </ScrollArea>
-                  {/* Input Bar */}
-                  {/* Input Bar */}
-<div className="sticky bottom-0 left-0 w-full  px-3 py-3 border-t border-primary/10 z-10">
-  <div className="flex gap-2 items-center">
-    <Input
-      ref={inputRef}
-      value={inputValue}
-      onChange={(e) => setInputValue(e.target.value)}
-      onKeyPress={handleKeyPress}
-      placeholder="Type your message..."
-      disabled={isLoading}
-      className="flex-1 h-12 rounded-full bg-white shadow-sm border border-gray-200 focus:ring-2 focus:ring-primary/30 text-base px-4"
-      style={{ minWidth: 0 }}
-    />
-    <Button
-      onClick={handleSendMessage}
-      disabled={!inputValue.trim() || isLoading}
-      size="icon"
-      className="h-12 w-12 rounded-full bg-gradient-to-br from-primary to-indigo-800 text-white shadow-lg flex items-center justify-center"
-    >
-      <Send className="h-5 w-5" />
-    </Button>
-  </div>
-</div>
+                  </div>
                 </>
               )}
             </CardContent>
