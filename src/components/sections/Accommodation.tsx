@@ -107,7 +107,7 @@ export default function Accommodation() {
     : properties.filter(property => property.type === activeTab);
 
   return (
-    <section id="accommodation" className="py-24">
+    <section id="accommodation" className="py-16 sm:py-20 lg:py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-base text-primary font-semibold tracking-wide uppercase">Accommodation</h2>
@@ -119,11 +119,15 @@ export default function Accommodation() {
           </p>
         </div>
 
-        <div className="mt-16 max-w-4xl mx-auto">
+        <div className="mt-12 sm:mt-16 max-w-6xl mx-auto">
           <Tabs defaultValue="All" value={activeTab} onValueChange={setActiveTab} className="w-full">
-            <TabsList className="grid w-full grid-cols-5 mb-8">
+            <TabsList className="grid w-full grid-cols-3 sm:grid-cols-3 lg:grid-cols-5 mb-8 h-auto gap-1 sm:gap-2">
               {accommodationTypes.map((type) => (
-                <TabsTrigger key={type} value={type} className="text-sm md:text-base">
+                <TabsTrigger 
+                  key={type} 
+                  value={type} 
+                  className="text-xs sm:text-sm md:text-base py-3 sm:py-3 px-2 sm:px-4 whitespace-nowrap"
+                >
                   {type}
                 </TabsTrigger>
               ))}
@@ -131,14 +135,14 @@ export default function Accommodation() {
 
             {accommodationTypes.map((type) => (
               <TabsContent key={type} value={type} className="mt-0 space-y-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 sm:gap-6">
                   {filteredProperties.map((property) => (
                     <PropertyCard key={property.id} property={property} />
                   ))}
                 </div>
                 
-                <div className="flex justify-center mt-12">
-                  <Button variant="outline">
+                <div className="flex justify-center mt-8 sm:mt-12">
+                  <Button variant="outline" className="w-full sm:w-auto">
                     View All {type !== "All" ? type : ""} Properties
                   </Button>
                 </div>
@@ -147,18 +151,31 @@ export default function Accommodation() {
           </Tabs>
         </div>
 
-        <div className="mt-24">
-          <h3 className="text-2xl font-bold mb-8">Featured Properties</h3>
-          <ScrollArea className="w-full whitespace-nowrap">
-            <div className="flex space-x-4 pb-4">
+        <div className="mt-16 sm:mt-20 lg:mt-24">
+          <h3 className="text-xl sm:text-2xl font-bold mb-6 sm:mb-8 text-center sm:text-left">Featured Properties</h3>
+          
+          {/* Mobile: Grid layout */}
+          <div className="block sm:hidden">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               {properties.filter(p => p.featured).map((property) => (
-                <div key={property.id} className="w-[320px]">
-                  <PropertyCard property={property} />
-                </div>
+                <PropertyCard key={property.id} property={property} />
               ))}
             </div>
-            <ScrollBar orientation="horizontal" />
-          </ScrollArea>
+          </div>
+          
+          {/* Desktop: Horizontal scroll */}
+          <div className="hidden sm:block">
+            <ScrollArea className="w-full">
+              <div className="flex space-x-4 sm:space-x-6 pb-4">
+                {properties.filter(p => p.featured).map((property) => (
+                  <div key={property.id} className="flex-shrink-0 w-[280px] sm:w-[320px] lg:w-[350px]">
+                    <PropertyCard property={property} />
+                  </div>
+                ))}
+              </div>
+              <ScrollBar orientation="horizontal" />
+            </ScrollArea>
+          </div>
         </div>
       </div>
     </section>
@@ -186,44 +203,45 @@ function PropertyCard({ property }: PropertyCardProps) {
   return (
     <Card className="overflow-hidden group hover:shadow-lg transition-all duration-300 border-border/40 h-full flex flex-col">
       <div className="relative">
-        <div className="aspect-[4/3] overflow-hidden h-48">
+        <div className="relative w-full h-48 sm:h-56 lg:h-52 overflow-hidden">
           <img 
             src={property.image} 
             alt={property.title} 
-            className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+            className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
           />
         </div>
         <Badge 
           variant="default" 
-          className="absolute top-3 left-3 bg-primary text-white"
+          className="absolute top-2 sm:top-3 left-2 sm:left-3 bg-primary text-white text-xs sm:text-sm"
         >
           {property.type}
         </Badge>
         {property.featured && (
           <Badge 
             variant="secondary" 
-            className="absolute top-3 right-3 bg-yellow-500/90 text-white"
+            className="absolute top-2 sm:top-3 right-2 sm:right-3 bg-yellow-500/90 text-white text-xs sm:text-sm"
           >
             Featured
           </Badge>
         )}
       </div>
-      <CardHeader className="pb-2">
+      <CardHeader className="pb-2 px-3 sm:px-6">
         <div className="flex justify-between items-start">
-          <div>
-            <h3 className="text-lg font-semibold line-clamp-1">{property.title}</h3>
-            <p className="text-muted-foreground text-sm flex items-center mt-1">
-              <i className="fas fa-map-marker-alt mr-1"></i> {property.location}
+          <div className="flex-1 min-w-0">
+            <h3 className="text-sm sm:text-lg font-semibold line-clamp-1">{property.title}</h3>
+            <p className="text-muted-foreground text-xs sm:text-sm flex items-center mt-1">
+              <i className="fas fa-map-marker-alt mr-1"></i> 
+              <span className="truncate">{property.location}</span>
             </p>
           </div>
-          <div className="flex items-center bg-primary/10 text-primary px-2 py-1 rounded text-sm font-medium">
+          <div className="flex items-center bg-primary/10 text-primary px-2 py-1 rounded text-xs sm:text-sm font-medium ml-2 flex-shrink-0">
             <i className="fas fa-star mr-1 text-yellow-500"></i>
             {property.rating}
           </div>
         </div>
       </CardHeader>
-      <CardContent className="flex-grow">
-        <div className="flex justify-between text-sm text-muted-foreground mt-2">
+      <CardContent className="flex-grow px-3 sm:px-6">
+        <div className="flex flex-wrap justify-between text-xs sm:text-sm text-muted-foreground mt-2 gap-2">
           <div className="flex items-center">
             <i className="fas fa-bed mr-1"></i>
             <span>{property.beds} {property.beds > 1 ? 'Beds' : 'Bed'}</span>
@@ -234,15 +252,15 @@ function PropertyCard({ property }: PropertyCardProps) {
           </div>
           <div className="flex items-center">
             <i className="fas fa-vector-square mr-1"></i>
-            <span>{property.area}</span>
+            <span className="truncate">{property.area}</span>
           </div>
         </div>
       </CardContent>
-      <CardFooter className="flex justify-between items-center pt-2 border-t">
-        <p className="font-bold text-lg">
-          {property.price}<span className="text-muted-foreground text-sm font-normal">/month</span>
+      <CardFooter className="flex justify-between items-center pt-2 border-t px-3 sm:px-6">
+        <p className="font-bold text-sm sm:text-lg">
+          {property.price}<span className="text-muted-foreground text-xs sm:text-sm font-normal">/month</span>
         </p>
-        <Button variant="secondary" size="sm">
+        <Button variant="secondary" size="sm" className="text-xs sm:text-sm">
           View Details
         </Button>
       </CardFooter>
