@@ -115,6 +115,13 @@ export default function ChatSupport() {
     setInputValue("");
   };
 
+  // Brand-aligned color palette
+  const userBg = "linear-gradient(135deg, #4f8cff 0%, #232347 100%)"; // blue to deep indigo/navy
+  const userText = "#fff";
+  const botBg = "linear-gradient(135deg, #fffbe6 0%, #fff 100%)"; // soft white/gold hint
+  const botText = "#232347";
+  const botBorder = "#FFD700"; // gold
+
   return (
     <>
       {/* Floating Chat Button */}
@@ -131,7 +138,7 @@ export default function ChatSupport() {
         <div className="fixed inset-0 z-50 flex items-end justify-center sm:items-end sm:justify-end bg-black/30">
           <Card className="w-full max-w-full sm:max-w-[420px] h-[90dvh] sm:h-[70vh] max-h-[90dvh] sm:max-h-[600px] flex flex-col rounded-t-3xl sm:rounded-3xl rounded-b-none sm:rounded-b-3xl shadow-2xl bg-white/95 border border-primary/10 backdrop-blur-lg relative m-0 sm:mr-4 sm:mb-24">
             {/* Header */}
-            <CardHeader className="sticky top-0 z-10 bg-transparent flex flex-row items-center justify-between px-6 py-4 border-b-0">
+            <CardHeader className="sticky top-0 z-10 bg-white/90 flex flex-row items-center justify-between px-6 py-4 border-b border-primary/10 rounded-t-3xl">
               <div className="flex items-center gap-2">
                 <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tr from-primary to-indigo-800 shadow-lg">
                   <MessageCircle className="text-white w-6 h-6" />
@@ -144,7 +151,7 @@ export default function ChatSupport() {
                     variant="ghost"
                     size="icon"
                     onClick={handleEndSession}
-                    className="h-8 w-8 text-indigo-300 hover:bg-indigo-800/20"
+                    className="h-8 w-8 text-indigo-600 hover:bg-indigo-800/20"
                     title="End Session"
                   >
                     <Power className="h-5 w-5" />
@@ -209,22 +216,37 @@ export default function ChatSupport() {
                             key={message.id}
                             className={`flex ${message.isUser ? "justify-end" : "justify-start"} items-end`}
                           >
+                            {/* Bot Avatar for support messages */}
                             {!message.isUser && (
                               <span className="mr-2 flex-shrink-0 flex items-end">
-                                <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-gradient-to-br from-primary to-indigo-800 shadow">
+                                <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 shadow border-2 border-white">
                                   <MessageCircle className="w-4 h-4 text-white" />
                                 </span>
                               </span>
                             )}
                             <div
-                              className={`max-w-[80%] rounded-2xl px-4 py-2 shadow ${
+                              className={`max-w-[80vw] sm:max-w-[70%] rounded-2xl px-4 py-3 shadow-md`}
+                              style={
                                 message.isUser
-                                  ? "bg-gradient-to-br from-primary to-indigo-800 text-white"
-                                  : "bg-gradient-to-br from-white to-gray-100 border border-primary/10 text-gray-900"
-                              }`}
+                                  ? {
+                                      background: userBg,
+                                      color: userText,
+                                      borderBottomRightRadius: "1.5rem",
+                                      borderTopLeftRadius: "1.5rem",
+                                      borderTopRightRadius: "1.5rem",
+                                    }
+                                  : {
+                                      background: botBg,
+                                      color: botText,
+                                      borderLeft: `4px solid ${botBorder}`,
+                                      borderBottomLeftRadius: "1.5rem",
+                                      borderTopLeftRadius: "1.5rem",
+                                      borderTopRightRadius: "1.5rem",
+                                    }
+                              }
                             >
-                              <p className="text-sm whitespace-pre-line">{message.text}</p>
-                              <p className="text-xs opacity-60 mt-1 text-right">
+                              <p className="text-base whitespace-pre-line leading-relaxed">{message.text}</p>
+                              <p className={`text-xs opacity-60 mt-2 text-right`} style={{ color: message.isUser ? "#fff" : botText }}>
                                 {message.timestamp.toLocaleTimeString([], {
                                   hour: "2-digit",
                                   minute: "2-digit",
@@ -247,7 +269,7 @@ export default function ChatSupport() {
                     </ScrollArea>
                   </div>
                   {/* Input Bar */}
-                  <div className="sticky bottom-0 left-0 w-full bg-white px-3 py-3 border-t border-primary/10 z-10">
+                  <div className="sticky bottom-0 left-0 w-full px-3 py-3 border-t border-primary/10 z-10 shadow-md">
                     <div className="flex gap-2 items-center">
                       <Input
                         ref={inputRef}
@@ -256,14 +278,14 @@ export default function ChatSupport() {
                         onKeyPress={handleKeyPress}
                         placeholder="Type your message..."
                         disabled={isLoading}
-                        className="flex-1 h-12 rounded-full bg-white shadow-sm border border-gray-200 focus:ring-2 focus:ring-primary/30 text-base px-4"
+                        className="flex-1 h-12 rounded-full bg-white shadow border border-gray-200 focus:ring-2 focus:ring-primary/30 text-base px-4"
                         style={{ minWidth: 0 }}
                       />
                       <Button
                         onClick={handleSendMessage}
                         disabled={!inputValue.trim() || isLoading}
                         size="icon"
-                        className="h-12 w-12 rounded-full bg-gradient-to-br from-primary to-indigo-800 text-white shadow-lg flex items-center justify-center"
+                        className="h-12 w-12 rounded-full bg-gradient-to-br from-primary to-indigo-800 text-white shadow-lg flex items-center justify-center hover:scale-105 transition-transform"
                       >
                         <Send className="h-5 w-5" />
                       </Button>
