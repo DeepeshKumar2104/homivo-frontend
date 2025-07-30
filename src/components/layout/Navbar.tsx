@@ -54,7 +54,7 @@ export default function Navbar({ onLoginClick, onSignupClick }: NavbarProps) {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             {/* <img
-              src="/images/HomivoLogo.png"
+              src="/Favicon.png"
               alt="Homivo"
               className="h-8 w-auto"
             /> */}
