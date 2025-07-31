@@ -1,243 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Homivo Notification</title>
-  <link href="https://fonts.googleapis.com/css?family=Inter:400,600,700&display=swap" rel="stylesheet">
-  <style>
-    body {
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    style="
       margin: 0;
-      padding: 0;
-      background: #f4f4f9;
-      font-family: 'Inter', Arial, sans-serif;
-      color: #232347;
-    }
-    .email-container {
-      max-width: 420px;
-      margin: 24px auto;
-      background: #fff;
-      border-radius: 18px;
-      box-shadow: 0 4px 24px rgba(35,35,71,0.10);
-      overflow: hidden;
-    }
-    .email-header {
-      padding: 32px 24px 16px 24px;
-      text-align: center;
-    }
-    .email-header h1 {
-      font-size: 1.25rem;
-      font-weight: 700;
-      margin: 0 0 4px 0;
-    }
-    .email-header p {
-      font-size: 1rem;
-      color: #888;
-      margin: 0;
-    }
-    .email-banner {
-      background: #232347;
-      padding: 32px 0 24px 0;
-      text-align: center;
-    }
-    .email-banner svg {
-      width: 70px;
-      height: 70px;
-      margin-bottom: 8px;
-    }
-    .email-content {
-      padding: 24px 24px 0 24px;
-      text-align: center;
-    }
-    .email-content h2 {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin: 0 0 10px 0;
-      color: #232347;
-    }
-    .email-content p {
-      font-size: 1rem;
-      color: #232347;
-      margin: 0 0 18px 0;
-    }
-    .otp-box {
-      display: inline-block;
-      background: #fff;
-      border: 2px dashed #FFD700;
-      color: #232347;
-      font-size: 1.6rem;
-      font-weight: 700;
-      letter-spacing: 0.4rem;
-      padding: 10px 22px;
-      border-radius: 10px;
-      margin-bottom: 18px;
-      margin-top: 8px;
-      user-select: all;
-    }
-    .email-btn {
-      display: inline-block;
-      background: linear-gradient(135deg, #FFD700 0%, #FFB600 100%);
-      color: #232347;
-      font-weight: 600;
-      font-size: 1rem;
-      padding: 12px 32px;
-      border-radius: 8px;
-      text-decoration: none;
-      margin: 18px 0 0 0;
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 2px 8px rgba(35,35,71,0.08);
-      transition: background 0.2s;
-    }
-    .email-btn:hover {
-      background: #232347;
-      color: #fff;
-    }
-    .email-feature-list {
-      padding: 24px 24px 0 24px;
-    }
-    .feature {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      margin-bottom: 18px;
-    }
-    .feature-icon {
-      flex-shrink: 0;
-      width: 32px;
-      height: 32px;
-      background: #FFD70022;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .feature-title {
-      font-weight: 600;
-      margin-bottom: 2px;
-      font-size: 1rem;
-      color: #232347;
-    }
-    .feature-desc {
-      font-size: 0.97rem;
-      color: #555;
-      margin: 0;
-    }
-    .email-footer {
-      padding: 18px 24px 12px 24px;
-      background: #f6f6fa;
-      color: #888;
-      font-size: 0.97rem;
-      text-align: center;
-      border-bottom-left-radius: 18px;
-      border-bottom-right-radius: 18px;
-    }
-    .email-footer a {
-      color: #232347;
-      text-decoration: underline;
-    }
-    .email-social {
-      margin: 12px 0 0 0;
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-    }
-    .email-social a {
-      display: inline-block;
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: #eaeaea;
-      color: #232347;
-      text-align: center;
-      line-height: 28px;
-      font-size: 1.1rem;
-      transition: background 0.2s;
-    }
-    .email-social a:hover {
-      background: #FFD700;
-      color: #232347;
-    }
-    @media (max-width: 600px) {
-      .email-container {
-        max-width: 98vw;
-        margin: 8px;
-      }
-      .email-header, .email-content, .email-feature-list, .email-footer {
-        padding-left: 10px;
-        padding-right: 10px;
-      }
-      .otp-box {
-        font-size: 1.2rem;
-        padding: 8px 10px;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="email-container">
-    <div class="email-header">
-      <h1>Verify Your Email Address</h1>
-      <p>Homivo Accommodation Platform</p>
-    </div>
-    <div class="email-banner">
-      <!-- SVG Envelope Icon -->
-      <svg fill="none" viewBox="0 0 64 64">
-        <rect width="64" height="48" y="8" rx="10" fill="#fff" stroke="#FFD700" stroke-width="2"/>
-        <path d="M8 16l24 18 24-18" stroke="#FFD700" stroke-width="2" fill="none"/>
-        <circle cx="54" cy="14" r="5" fill="#FFD700" opacity="0.18"/>
-      </svg>
-    </div>
-    <div class="email-content">
-      <h2>Hi Deepesh,</h2>
-      <p>
-        Please use the OTP below to verify your email address and complete your registration on Homivo.
-      </p>
-      <div class="otp-box">482193</div>
-      <p style="margin-bottom: 0;">
-        This code is valid for 10 minutes.<br>
-        If you did not request this, please ignore this email.
-      </p>
-      <a href="https://homivo.com" class="email-btn">Go to Homivo</a>
-    </div>
-    <div class="email-feature-list">
-      <div class="feature">
-        <span class="feature-icon">
-          <!-- Shield SVG -->
-          <svg width="20" height="20" fill="none" viewBox="0 0 20 20">
-            <path d="M10 2l6 2v5c0 5-3.5 8-6 9-2.5-1-6-4-6-9V4l6-2z" stroke="#FFD700" stroke-width="1.5" fill="#fff"/>
-            <path d="M10 7v4" stroke="#FFD700" stroke-width="1.5" stroke-linecap="round"/>
-            <circle cx="10" cy="13" r="1" fill="#FFD700"/>
-          </svg>
-        </span>
-        <div>
-          <div class="feature-title">Secure & Trusted</div>
-          <div class="feature-desc">Your data and transactions are protected with industry-leading security.</div>
+      font-family: 'Poppins', sans-serif;
+      background: #ffffff;
+      font-size: 14px;
+    "
+  >
+    <div
+      style="
+        max-width: 680px;
+        margin: 0 auto;
+        padding: 45px 30px 60px;
+        background: #f4f7ff;
+        background-image: url(https://archisketch-resources.s3.ap-northeast-2.amazonaws.com/vrstyler/1661497957196_595865/email-template-background-banner);
+        background-repeat: no-repeat;
+        background-size: 800px 452px;
+        background-position: top center;
+        font-size: 14px;
+        color: #434343;
+      "
+    >
+      <header>
+        <table style="width: 100%;">
+          <tbody>
+            <tr style="height: 0;">
+              <td>
+                <span style="font-size: 24px; font-weight: bold; color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+  Homivo
+</span>
+              </td>
+              <td style="text-align: right;">
+                <span
+                  style="font-size: 16px; line-height: 30px; color: #ffffff;"
+                  >12 Nov, 2021</span
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </header>
+
+      <main>
+        <div
+          style="
+            margin: 0;
+            margin-top: 70px;
+            padding: 92px 30px 115px;
+            background: #ffffff;
+            border-radius: 30px;
+            text-align: center;
+          "
+        >
+          <div style="width: 100%; max-width: 489px; margin: 0 auto;">
+            <h1
+              style="
+                margin: 0;
+                font-size: 24px;
+                font-weight: 500;
+                color: #1f1f1f;
+              "
+            >
+              Your OTP
+            </h1>
+            <p
+              style="
+                margin: 0;
+                margin-top: 17px;
+                font-size: 16px;
+                font-weight: 500;
+              "
+            >
+              Hey {{USERNAME}},
+            </p>
+            <p
+              style="
+                margin: 0;
+                margin-top: 17px;
+                font-weight: 500;
+                letter-spacing: 0.56px;
+              "
+            >
+              Thank you for choosing Homivo Technology Pvt Ltd. Use the following OTP
+              to complete the procedure to change your email address. OTP is
+              valid for
+              <span style="font-weight: 600; color: #1f1f1f;">5 minutes</span>.
+              Do not share this code with others, including Archisketch
+              employees.
+            </p>
+            <p
+              style="
+                margin: 0;
+                margin-top: 60px;
+                font-size: 40px;
+                font-weight: 600;
+                letter-spacing: 25px;
+                color: #ba3d4f;
+              "
+            >
+              {{OTP}}
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="feature">
-        <span class="feature-icon">
-          <!-- Home SVG -->
-          <svg width="20" height="20" fill="none" viewBox="0 0 20 20">
-            <path d="M3 9.5L10 4l7 5.5" stroke="#FFD700" stroke-width="1.5" fill="none"/>
-            <rect x="5" y="10" width="10" height="6" rx="2" fill="#fff" stroke="#FFD700" stroke-width="1.5"/>
-          </svg>
-        </span>
-        <div>
-          <div class="feature-title">All-in-One Platform</div>
-          <div class="feature-desc">Find, book, and manage accommodation easily for tenants and owners.</div>
+
+        <p
+          style="
+            max-width: 400px;
+            margin: 0 auto;
+            margin-top: 90px;
+            text-align: center;
+            font-weight: 500;
+            color: #8c8c8c;
+          "
+        >
+          Need help? Ask at
+          <a
+            href="mailto:info.homivo@gmail.com"
+            style="color: #499fb6; text-decoration: none;"
+            >info.homivo@gmail.com</a
+          >
+          or visit our
+          <a
+            href=""
+            target="_blank"
+            style="color: #499fb6; text-decoration: none;"
+            >Help Center</a
+          >
+        </p>
+      </main>
+
+      <footer
+        style="
+          width: 100%;
+          max-width: 490px;
+          margin: 20px auto 0;
+          text-align: center;
+          border-top: 1px solid #e6ebf1;
+        "
+      >
+        <p
+          style="
+            margin: 0;
+            margin-top: 40px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #434343;
+          "
+        >
+          Homivo Technology Pvt Ltd
+        </p>
+        <p style="margin: 0; margin-top: 8px; color: #434343;">
+          Address 540, City, State.
+        </p>
+        <div style="margin: 0; margin-top: 16px;">
+          <a href="" target="_blank" style="display: inline-block;">
+            <img
+              width="36px"
+              alt="Facebook"
+              src="https://archisketch-resources.s3.ap-northeast-2.amazonaws.com/vrstyler/1661502815169_682499/email-template-icon-facebook"
+            />
+          </a>
+          <a
+            href=""
+            target="_blank"
+            style="display: inline-block; margin-left: 8px;"
+          >
+            <img
+              width="36px"
+              alt="Instagram"
+              src="https://archisketch-resources.s3.ap-northeast-2.amazonaws.com/vrstyler/1661504218208_684135/email-template-icon-instagram"
+          /></a>
+          <a
+            href=""
+            target="_blank"
+            style="display: inline-block; margin-left: 8px;"
+          >
+            <img
+              width="36px"
+              alt="Twitter"
+              src="https://archisketch-resources.s3.ap-northeast-2.amazonaws.com/vrstyler/1661503043040_372004/email-template-icon-twitter"
+            />
+          </a>
+          <a
+            href=""
+            target="_blank"
+            style="display: inline-block; margin-left: 8px;"
+          >
+            <img
+              width="36px"
+              alt="Youtube"
+              src="https://archisketch-resources.s3.ap-northeast-2.amazonaws.com/vrstyler/1661503195931_210869/email-template-icon-youtube"
+          /></a>
         </div>
-      </div>
+        <p style="margin: 0; margin-top: 16px; color: #434343;">
+          Copyright © 2022 Company. All rights reserved.
+        </p>
+      </footer>
     </div>
-    <div class="email-footer">
-      &copy; 2025 Homivo. All rights reserved.<br>
-      Need help? <a href="mailto:support@homivo.com">Contact Support</a>
-      <div class="email-social">
-        <a href="#"><svg width="16" height="16" fill="currentColor"><circle cx="8" cy="8" r="8"/></svg></a>
-        <a href="#"><svg width="16" height="16" fill="currentColor"><rect x="2" y="2" width="12" height="12" rx="3"/></svg></a>
-        <a href="#"><svg width="16" height="16" fill="currentColor"><ellipse cx="8" cy="8" rx="7" ry="5"/></svg></a>
-      </div>
-    </div>
-  </div>
-</body>
+  </body>
 </html>
