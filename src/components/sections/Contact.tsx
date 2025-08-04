@@ -90,7 +90,7 @@ export default function Contact() {
         {/* Map Section */}
         <div className="mt-16 relative rounded-lg overflow-hidden h-[400px]">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.9975588482097!2d77.6341115!3d12.9783334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae17b842ee85dd%3A0x6247963f94f10fb4!2sKoramangala%2C%20Bengaluru%2C%20Karnataka%2C%20India!5e0!3m2!1sen!2sus!4v1657013130396!5m2!1sen!2sus"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d24311.2345!2d81.629997!3d21.25!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4vXXXXXXXXXXX"
             width="100%"
             height="100%"
             style={{ border: 0 }}
