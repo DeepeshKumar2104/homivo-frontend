@@ -5,6 +5,7 @@ import Accommodation from "@/components/sections/Accommodation";
 import Testimonials from "@/components/sections/Testimonials";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/layout/Footer";
+import CallToAction from "@/components/sections/CallToAction";
 import { useEffect } from "react";
 
 interface HomePageProps {
@@ -25,6 +26,7 @@ export default function HomePage({ onLoginClick, onSignupClick }: HomePageProps)
       <Accommodation />
       <Testimonials />
       <Contact />
+      <CallToAction />
       <Footer />
     </main>
   );

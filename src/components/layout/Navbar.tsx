@@ -9,6 +9,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import NotFound from "@/pages/NotFound";
 
 interface NavbarProps {
   onLoginClick: () => void;
@@ -38,6 +39,7 @@ export default function Navbar({ onLoginClick, onSignupClick }: NavbarProps) {
     { name: "Accommodation", href: "#accommodation" },
     { name: "Testimonials", href: "#testimonials" },
     { name: "Contact", href: "#contact" },
+    {name:"NotFound", href: "/not-found" }
   ];
   
   return (
